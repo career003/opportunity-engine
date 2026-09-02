@@ -1,6 +1,30 @@
 [
     {
         "category": "SCHOLARSHIPS",
+        "title": "Siemens Scholarship Program for Engineering Students",
+        "description": "Siemens India offers holistic financial support and mentorship to first-year students enrolled in government engineering colleges, covering full tuition fees and offering soft skills training.",
+        "link": "https://www.siemens.com"
+    },
+    {
+        "category": "INTERNSHIPS",
+        "title": "Vikram Sarabhai Space Centre (ISRO) Internship",
+        "description": "The Vikram Sarabhai Space Centre (VSSC/ISRO) provides practical internship training opportunities for undergraduate and postgraduate students pursuing degrees in engineering and science disciplines.",
+        "link": "https://www.vssc.gov.in"
+    },
+    {
+        "category": "INTERNSHIPS",
+        "title": "World Bank Paid Internship Program",
+        "description": "The World Bank offers paid internship positions for enrolled graduate and postgraduate students looking to gain practical experience in international development, economics, public policy, and technical fields.",
+        "link": "https://www.worldbank.org"
+    },
+    {
+        "category": "INTERNSHIPS",
+        "title": "Ministry of Women and Child Development Internship",
+        "description": "The Ministry of Women and Child Development, Government of India, provides a paid internship scheme offering a stipend of Rs 20,000 per month for female students, researchers, and scholars.",
+        "link": "https://wcd.nic.in"
+    },
+    {
+        "category": "SCHOLARSHIPS",
         "title": "Siemens Scholarship Program",
         "description": "Financial assistance, holistic development, and mentorship program designed for first-year engineering students from economically weaker backgrounds in India.",
         "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQUXZubEhKY3lCSTVQaWlZcEFvcTZ5RC1BaHdVdnVQTlZiNEplbzNwbWVJNlMtS3NKS2txZ0Q5MXpMX3dJSmlBeTFHVXFVR3FuNnB2OURaN0YyckVmRTZxZjRFRUJkZTdpSDJUOGV4QmtUX0FMNm5ieHlrcWxiUXBTWHhLZ0hmT3NuMURlRXpaazJYNXYzc2FiYnZRZGdRRTk3dzYw?oc=5"
