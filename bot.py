@@ -18,15 +18,15 @@ try:
     for item in root.findall('.//item')[:15]:
         title = item.find('title').text if item.find('title') is not None else "Opportunity"
         link = item.find('link').text if item.find('link') is not None else "#"
-        raw_items.append(f"Title: {title} | Source Link: {link}")
+        raw_items.append(f"Title: {title} | Wrapped Link: {link}")
     
     raw_text_corpus = "\n".join(raw_items)
 except Exception as e:
-    raw_text_corpus = "Tech internships in India, National Scholarship Portal updates, graduate jobs."
+    raw_text_corpus = "Tech internships in India, National Scholarship Portal updates."
 
 prompt = f"""
-Analyze the following raw feed items and extract up to 6 real, valid career opportunities, internships, jobs, or scholarships for students/job seekers in India. 
-For the "link" field, provide the direct official source link if present, or a clean valid URL. Do not use broken tracking links.
+Analyze the following raw feed items and extract up to 6 real, valid career opportunities, internships, jobs, or scholarships for students/job seekers in India.
+CRITICAL INSTRUCTION FOR LINKS: Google News RSS links contain tracking wrappers that cause redirect errors. For the "link" field, you must provide the actual official root domain URL of the hiring organization or publisher (e.g., if it's an internship on a university or company site, provide that direct URL instead of a google.com/url link). If you cannot find the direct domain, provide a clean fallback standard career portal domain like "https://www.ncs.gov.in" or "https://scholarships.gov.in".
 
 Raw Feed:
 {raw_text_corpus}
