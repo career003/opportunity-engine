@@ -15,25 +15,22 @@ try:
     root = ET.fromstring(feed_data)
     
     raw_items = []
-    for item in root.findall('.//item')[:15]:
+    for item in root.findall('.//item')[:10]:
         title = item.find('title').text if item.find('title') is not None else "Opportunity"
-        link = item.find('link').text if item.find('link') is not None else "#"
-        raw_items.append(f"Title: {title} | Source: {link}")
+        raw_items.append(f"Title: {title}")
     
     raw_text_corpus = "\n".join(raw_items)
 except Exception as e:
-    raw_text_corpus = "Tech internships in India, National Scholarship Portal updates."
+    raw_text_corpus = "Tech internships in India, National Scholarship Portal updates, government jobs."
 
 prompt = f"""
-Analyze the following raw feed items and extract up to 6 real, valid career opportunities, internships, jobs, or scholarships.
-CRITICAL INSTRUCTION FOR LINKS: Do not output Google tracking or wrapper links. Provide the direct official domain or career page link for each opportunity (e.g., https://www.ncs.gov.in, https://scholarships.gov.in, or the specific hiring organization website). 
+Generate up to 6 real, highly valuable career opportunities, internships, jobs, or scholarships based on current market trends for students and young professionals in India and globally.
 
-Raw Feed:
-{raw_text_corpus}
+CRITICAL REQUIREMENT FOR LINKS: Do not use Google redirect or wrapper URLs. For each item, provide a direct, clean official portal or source link (e.g., https://www.ncs.gov.in, https://scholarships.gov.in, https://careers.google.com, https://github.com, or official organizational career pages).
 
 Return ONLY a valid JSON array with objects containing these exact keys: 
 "category" (choose strictly from: TODAY'S JOBS, SCHOLARSHIPS, REMOTE JOBS, INTERNSHIPS, FREE COURSES, COMPETITIONS, AI TOOLS), 
-"title", "organization", "location", "eligibility", "deadline", "salary", "qualification", "description", "link".
+"title", "organization", "location", "eligibility", "deadline", "salary", "qualification", "description", "source_url".
 No markdown formatting blocks around it, just raw JSON.
 """
 
@@ -42,15 +39,13 @@ clean_text = response.text.replace("```json", "").replace("```", "").strip()
 
 try:
     new_data = json.loads(clean_text)
-    if os.path.exists("opportunities.json"):
-        with open("opportunities.json", "r") as f:
-            existing_data = json.load(f)
-    else:
-        existing_data = []
+    # Ensure source_url field maps correctly for frontend consumption
+    for item in new_data:
+        if "source_url" not in item or not item["source_url"].startswith("http"):
+            item["source_url"] = "https://www.ncs.gov.in"
 
-    combined_data = new_data + existing_data
     with open("opportunities.json", "w") as f:
-        json.dump(combined_data[:30], f, indent=4)
+        json.dump(new_data, f, indent=4)
         
 except Exception as e:
     print(f"Error parsing AI output: {e}")
