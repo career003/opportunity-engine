@@ -26,7 +26,7 @@ except Exception as e:
 prompt = f"""
 Generate up to 6 real, highly valuable career opportunities, internships, jobs, or scholarships based on current market trends for students and young professionals in India and globally.
 
-CRITICAL REQUIREMENT FOR LINKS: Do not use Google redirect or wrapper URLs. For each item, provide a direct, clean official portal or source link (e.g., https://www.ncs.gov.in, https://scholarships.gov.in, https://careers.google.com, https://github.com, or official organizational career pages).
+CRITICAL REQUIREMENT FOR LINKS: Do not use AI development platforms, Google Studio, or raw code repository links. For each item, provide a direct official career portal or application URL (e.g., https://www.ncs.gov.in, https://scholarships.gov.in, https://careers.google.com, or official organizational career pages).
 
 Return ONLY a valid JSON array with objects containing these exact keys: 
 "category" (choose strictly from: TODAY'S JOBS, SCHOLARSHIPS, REMOTE JOBS, INTERNSHIPS, FREE COURSES, COMPETITIONS, AI TOOLS), 
@@ -39,9 +39,10 @@ clean_text = response.text.replace("```json", "").replace("```", "").strip()
 
 try:
     new_data = json.loads(clean_text)
-    # Ensure source_url field maps correctly for frontend consumption
+    # Ensure source_url field maps correctly for frontend consumption and filters out unwanted domains
     for item in new_data:
-        if "source_url" not in item or not item["source_url"].startswith("http"):
+        url = item.get("source_url", "")
+        if not url.startswith("http") or "aistudio.google.com" in url or "github.com" in url:
             item["source_url"] = "https://www.ncs.gov.in"
 
     with open("opportunities.json", "w") as f:
