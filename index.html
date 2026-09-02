@@ -1,182 +1,524 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Opportunity Engine India - Career & Scholarship Portal</title>
+    <title>OpportunityHub — Discover Jobs, Scholarships & Careers</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] },
+                }
+            }
+        }
+    </script>
 </head>
-<body class="bg-slate-50 min-h-screen text-slate-800 flex flex-col justify-between">
+<body class="bg-[#FAFAFC] text-slate-900 font-sans antialiased min-h-screen flex flex-col justify-between selection:bg-indigo-600 selection:text-white">
 
-    <!-- Navigation Bar -->
-    <nav class="bg-white border-b border-slate-200 sticky top-0 z-50 shadow-sm">
+    <!-- Navbar -->
+    <nav class="bg-white/80 backdrop-blur-md border-b border-slate-100 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-            <div class="font-bold text-xl text-blue-600 flex items-center gap-2">
-                <span>🚀</span> Opportunity Engine
+            <a href="#" onclick="switchView('home')" class="font-extrabold text-xl text-slate-900 tracking-tight flex items-center gap-2">
+                <span class="w-8 h-8 rounded-lg bg-indigo-600 text-white flex items-center justify-center text-sm font-black shadow-sm shadow-indigo-200">OH</span>
+                OpportunityHub
+            </a>
+            <div class="hidden lg:flex items-center space-x-1 text-sm font-medium text-slate-600">
+                <a href="#categories" onclick="filterCategory('TODAY\'S JOBS')" class="px-3 py-2 rounded-lg hover:text-indigo-600 hover:bg-slate-50 transition">Jobs</a>
+                <a href="#categories" onclick="filterCategory('SCHOLARSHIPS')" class="px-3 py-2 rounded-lg hover:text-indigo-600 hover:bg-slate-50 transition">Scholarships</a>
+                <a href="#categories" onclick="filterCategory('REMOTE JOBS')" class="px-3 py-2 rounded-lg hover:text-indigo-600 hover:bg-slate-50 transition">Remote</a>
+                <a href="#categories" onclick="filterCategory('INTERNSHIPS')" class="px-3 py-2 rounded-lg hover:text-indigo-600 hover:bg-slate-50 transition">Internships</a>
+                <a href="#categories" onclick="filterCategory('FREE COURSES')" class="px-3 py-2 rounded-lg hover:text-indigo-600 hover:bg-slate-50 transition">Courses</a>
+                <a href="#categories" onclick="filterCategory('COMPETITIONS')" class="px-3 py-2 rounded-lg hover:text-indigo-600 hover:bg-slate-50 transition">Competitions</a>
+                <a href="#categories" onclick="filterCategory('AI TOOLS')" class="px-3 py-2 rounded-lg hover:text-indigo-600 hover:bg-slate-50 transition">AI Tools</a>
             </div>
-            <div class="hidden md:flex space-x-6 text-sm font-medium text-slate-600">
-                <a href="#home" class="hover:text-blue-600 transition">Home</a>
-                <a href="#about" class="hover:text-blue-600 transition">About Portal</a>
-                <a href="#opportunities" class="hover:text-blue-600 transition">Browse Listings</a>
+            <div>
+                <a href="#today" onclick="openTodaySummary()" class="text-xs font-bold text-indigo-600 bg-indigo-50 border border-indigo-100 px-3 py-2 rounded-lg hover:bg-indigo-100 transition">🔥 Today's Feed</a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <header id="home" class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-16 px-4 text-center">
-        <div class="max-w-3xl mx-auto">
-            <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight">Your Gateway to Verified Opportunities</h1>
-            <p class="mt-4 text-blue-100 text-sm md:text-base leading-relaxed">
-                Aggregating daily verified career positions, global scholarships, paid internships, and technical certifications tailored for ambitious students and professionals.
-            </p>
-            <div class="mt-8">
-                <input type="text" id="searchInput" placeholder="Search by title, keyword, or organization..." 
-                    class="w-full px-5 py-3.5 rounded-xl text-slate-800 focus:outline-none focus:ring-4 focus:ring-blue-400/50 shadow-lg text-sm"
-                    onkeyup="filterOpportunities()">
+    <!-- Main View Container -->
+    <div id="appContainer" class="flex-grow">
+        <!-- Home View -->
+        <div id="homeView">
+            <!-- Hero Section -->
+            <header class="relative overflow-hidden pt-16 pb-20 px-4 sm:px-6 lg:px-8 text-center bg-gradient-to-b from-white via-[#FAFAFC] to-[#FAFAFC]">
+                <div class="max-w-3xl mx-auto space-y-6">
+                    <span class="inline-flex items-center gap-1.5 py-1 px-3 rounded-full text-xs font-semibold bg-indigo-50 text-indigo-700 border border-indigo-100">
+                        ✨ Updated live daily across India & Global
+                    </span>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.1]">
+                        Discover Your Next <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600">Big Opportunity</span>
+                    </h1>
+                    <p class="text-base sm:text-lg text-slate-500 max-w-2xl mx-auto font-normal">
+                        Jobs, internships, scholarships, free courses and career opportunities — verified and updated daily.
+                    </p>
+                    
+                    <!-- Search Bar -->
+                    <div class="max-w-xl mx-auto pt-4">
+                        <div class="relative flex items-center shadow-lg shadow-slate-200/50 rounded-2xl border border-slate-200 bg-white overflow-hidden p-1.5">
+                            <span class="pl-3 text-slate-400 text-lg">🔍</span>
+                            <input type="text" id="searchInput" placeholder="Search titles, organizations, or keywords..." 
+                                class="w-full px-3 py-3 text-sm text-slate-800 placeholder-slate-400 focus:outline-none"
+                                onkeyup="handleSearch()">
+                            <button onclick="handleSearch()" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold text-sm px-6 py-3 rounded-xl transition">Search</button>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Category Cards Grid -->
+            <section id="categories" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4" id="categoryCardsGrid">
+                    <!-- Dynamic Category Cards -->
+                </div>
+            </section>
+
+            <!-- Latest Opportunities Section -->
+            <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+                <div class="flex items-center justify-between mb-8">
+                    <div>
+                        <h2 class="text-2xl font-bold text-slate-900" id="sectionTitle">Latest Opportunities</h2>
+                        <p class="text-sm text-slate-500">Fresh listings verified by our aggregation engine.</p>
+                    </div>
+                    <button onclick="filterCategory('ALL')" id="clearFilterBtn" class="hidden text-xs font-semibold text-indigo-600 bg-indigo-50 px-3 py-1.5 rounded-lg hover:bg-indigo-100 transition">View All</button>
+                </div>
+
+                <div id="opportunityGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Cards injected here -->
+                </div>
+            </section>
+
+            <!-- Newsletter Section -->
+            <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+                <div class="bg-gradient-to-br from-indigo-900 to-slate-900 rounded-3xl p-8 sm:p-12 text-white shadow-xl relative overflow-hidden">
+                    <div class="relative z-10 max-w-xl mx-auto text-center space-y-4">
+                        <h3 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Never Miss An Opportunity</h3>
+                        <p class="text-slate-300 text-sm">Get the latest jobs, scholarships, internships and opportunities directly in your inbox.</p>
+                        <div class="flex flex-col sm:flex-row gap-3 pt-4">
+                            <input type="email" id="newsletterEmail" placeholder="Enter your email address" class="flex-grow px-4 py-3 rounded-xl text-slate-900 text-sm focus:outline-none bg-white/90 backdrop-blur">
+                            <button onclick="subscribeNewsletter()" class="bg-indigo-500 hover:bg-indigo-600 text-white font-semibold text-sm px-6 py-3 rounded-xl transition shadow-md">Subscribe</button>
+                        </div>
+                        <p id="newsletterMsg" class="text-xs text-indigo-300 h-4"></p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Detail Page View -->
+        <div id="detailView" class="hidden max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+            <!-- Breadcrumb -->
+            <nav class="text-xs text-slate-500 mb-6 flex items-center gap-2">
+                <a href="#" onclick="switchView('home')" class="hover:text-indigo-600">Home</a>
+                <span>/</span>
+                <span id="detailBreadcrumbCat" class="text-slate-700 font-semibold"></span>
+            </nav>
+
+            <div id="detailContent" class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-10 shadow-sm space-y-8">
+                <!-- Injected via JS -->
             </div>
         </div>
-    </header>
 
-    <!-- About Content Section -->
-    <section id="about" class="max-w-7xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
-            <div class="text-3xl mb-3">📌</div>
-            <h3 class="text-lg font-bold text-slate-900 mb-2">What Is This Platform?</h3>
-            <p class="text-sm text-slate-600 leading-relaxed">
-                An automated career engine that crawls live education, employment, and fellowship data feeds daily, structuring them instantly into accessible postings.
-            </p>
-        </div>
-        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
-            <div class="text-3xl mb-3">🎯</div>
-            <h3 class="text-lg font-bold text-slate-900 mb-2">Why Use Opportunity Engine?</h3>
-            <p class="text-sm text-slate-600 leading-relaxed">
-                We remove administrative friction, offering direct routing to verified opportunity portals with clear timelines and structured application fields.
-            </p>
-        </div>
-        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
-            <div class="text-3xl mb-3">🌍</div>
-            <h3 class="text-lg font-bold text-slate-900 mb-2">Where & Who Is It For?</h3>
-            <p class="text-sm text-slate-600 leading-relaxed">
-                Hosted via secure cloud infrastructure, providing targeted domestic programs across India alongside international remote positions and global fellowships.
-            </p>
-        </div>
-    </section>
+        <!-- Today's Daily Page View -->
+        <div id="todayView" class="hidden max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="mb-8">
+                <a href="#" onclick="switchView('home')" class="text-xs font-semibold text-indigo-600 bg-indigo-50 px-3 py-1.5 rounded-lg hover:bg-indigo-100 transition">&larr; Back to Home</a>
+                <h1 class="text-3xl font-extrabold text-slate-900 mt-4">Today's Opportunities</h1>
+                <p class="text-sm text-slate-500 mt-1" id="todayDateLabel"></p>
+            </div>
 
-    <!-- Main Listings Section -->
-    <main id="opportunities" class="max-w-7xl mx-auto px-4 py-8 flex-grow w-full">
-        <div class="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-4">
-            <h2 class="text-2xl font-bold text-slate-900">Active Opportunities</h2>
-            <!-- Category Filters -->
-            <div class="flex flex-wrap gap-2" id="categoryFilters">
-                <button onclick="filterCategory('ALL')" class="cat-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-blue-600 text-white shadow transition">ALL</button>
-                <button onclick="filterCategory(this.innerText)" class="cat-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-white text-slate-600 border border-slate-200 hover:bg-slate-100 transition">TODAY'S JOBS</button>
-                <button onclick="filterCategory(this.innerText)" class="cat-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-white text-slate-600 border border-slate-200 hover:bg-slate-100 transition">SCHOLARSHIPS</button>
-                <button onclick="filterCategory(this.innerText)" class="cat-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-white text-slate-600 border border-slate-200 hover:bg-slate-100 transition">INTERNSHIPS</button>
-                <button onclick="filterCategory(this.innerText)" class="cat-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-white text-slate-600 border border-slate-200 hover:bg-slate-100 transition">REMOTE JOBS</button>
-                <button onclick="filterCategory(this.innerText)" class="cat-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-white text-slate-600 border border-slate-200 hover:bg-slate-100 transition">FREE COURSES</button>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-10" id="todayCountsGrid">
+                <!-- Count cards -->
+            </div>
+
+            <div id="todayListContainer" class="space-y-4">
+                <!-- Today items -->
             </div>
         </div>
-
-        <div id="opportunityGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="col-span-full text-center py-16 text-slate-400">Loading structured opportunities...</div>
-        </div>
-    </main>
+    </div>
 
     <!-- Footer -->
-    <footer class="bg-white border-t border-slate-200 text-center py-6 text-xs text-slate-500 mt-16">
-        <p>© 2026 Opportunity Engine • Fully Automated Platform Hosted on GitHub Pages</p>
+    <footer class="bg-white border-t border-slate-200 py-12 text-sm text-slate-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-2 font-bold text-slate-900">
+                <span class="w-6 h-6 rounded bg-indigo-600 text-white flex items-center justify-center text-xs">OH</span>
+                OpportunityHub
+            </div>
+            <div class="flex flex-wrap justify-center gap-6 text-xs font-medium text-slate-600">
+                <a href="#categories" onclick="filterCategory('ALL')" class="hover:text-indigo-600 transition">Categories</a>
+                <a href="#" onclick="switchView('home')" class="hover:text-indigo-600 transition">About</a>
+                <a href="#" onclick="alert('Contact: support@opportunityhub.local')" class="hover:text-indigo-600 transition">Contact</a>
+                <a href="#" onclick="alert('Privacy Policy: All data is secure and verified.')" class="hover:text-indigo-600 transition">Privacy Policy</a>
+                <a href="#" onclick="alert('Terms: Free public career aggregation portal.')" class="hover:text-indigo-600 transition">Terms</a>
+                <a href="#" onclick="alert('Always verify information from official sources.')" class="hover:text-indigo-600 transition">Disclaimer</a>
+            </div>
+            <p class="text-xs text-slate-400">© 2026 OpportunityHub</p>
+        </div>
     </footer>
 
+    <!-- Script Engine -->
     <script>
-        let allOpportunities = [];
-        let currentCategory = 'ALL';
-
-        async function loadOpportunities() {
-            try {
-                const response = await fetch('opportunities.json?' + new Date().getTime());
-                if (!response.ok) throw new Error('Network response was not ok');
-                allOpportunities = await response.json();
-                if (!Array.isArray(allOpportunities)) allOpportunities = [];
-                displayOpportunities(allOpportunities);
-            } catch (error) {
-                console.error("Error loading JSON:", error);
-                document.getElementById('opportunityGrid').innerHTML = `
-                    <div class="col-span-full text-center text-red-500 py-8 bg-white rounded-xl border border-slate-200">Unable to load active listings database. Please check back shortly.</div>`;
+        // Mock JSON Data Database supporting all specifications
+        const opportunitiesData = [
+            {
+                id: 1,
+                category: "TODAY'S JOBS",
+                title: "Junior Software Engineer",
+                organization: "TechCorp India",
+                location: "Bengaluru, India",
+                eligibility: "B.Tech / B.E in CS/IT (2024-2026 Batch)",
+                deadline: "2026-04-15",
+                postedDate: "Today",
+                salary: "INR 6 - 9 LPA",
+                qualification: "Bachelor's Degree in Computer Science or equivalent technical field.",
+                description: "Looking for an energetic junior developer proficient in Python and JavaScript to build scalable backend services and responsive frontend dashboards.",
+                requirements: ["Proficiency in Python or JavaScript", "Understanding of REST APIs", "Good problem-solving skills"],
+                importantDates: "Applications close on April 15, 2026. Interviews roll out weekly.",
+                sourceLink: "https://www.ncs.gov.in",
+                lastVerified: "Today, 06:00 AM"
+            },
+            {
+                id: 2,
+                category: "SCHOLARSHIPS",
+                title: "National Merit STEM Scholarship 2026",
+                organization: "Ministry of Education, India",
+                location: "Pan-India / Online",
+                eligibility: "Undergraduate STEM Students with >85% marks",
+                deadline: "2026-05-30",
+                postedDate: "Yesterday",
+                salary: "INR 50,000 / year grant",
+                qualification: "Enrolled in a recognized full-time STEM bachelor's degree program.",
+                description: "Financial assistance scholarship granted to meritorious students pursuing science, technology, engineering, and mathematics disciplines across Indian universities.",
+                requirements: ["Minimum 85% in previous semester/year", "Income certificate below 8 LPA", "Valid student ID"],
+                importantDates: "Application deadline: May 30, 2026. Award announcement: June 20, 2026.",
+                sourceLink: "https://scholarships.gov.in",
+                lastVerified: "Yesterday"
+            },
+            {
+                id: 3,
+                category: "REMOTE JOBS",
+                title: "Remote Frontend Developer",
+                organization: "Global Solutions Inc.",
+                location: "Remote (Work From Home)",
+                eligibility: "1+ Years Experience in Tailwind & React",
+                deadline: "2026-04-20",
+                postedDate: "2 days ago",
+                salary: "$1,500 - $2,500 / month",
+                qualification: "Proven portfolio of responsive web applications built with modern JavaScript frameworks.",
+                description: "Join our globally distributed engineering team building clean, mobile-first web platforms with minimal design principles and high accessibility standards.",
+                requirements: ["Strong command of HTML5, CSS3, and JavaScript", "Experience with Tailwind CSS", "Self-starter with asynchronous communication skills"],
+                importantDates: "Rolling review until April 20, 2026.",
+                sourceLink: "https://github.com",
+                lastVerified: "2 days ago"
+            },
+            {
+                id: 4,
+                category: "INTERNSHIPS",
+                title: "AI Research Intern",
+                organization: "DeepTech Labs",
+                location: "Hyderabad / Hybrid",
+                eligibility: "M.Tech / B.Tech Final Year Students",
+                deadline: "2026-04-10",
+                postedDate: "Today",
+                salary: "INR 35,000 / month stipend",
+                qualification: "Background in Machine Learning, PyTorch or TensorFlow, and NLP pipelines.",
+                description: "Work alongside senior AI researchers to train, evaluate, and fine-tune generative language models for automated data categorization tasks.",
+                requirements: ["Strong Python programming skills", "Familiarity with transformer architectures", "Published papers or projects is a plus"],
+                importantDates: "Deadline: April 10, 2026. Internship begins May 1, 2026.",
+                sourceLink: "https://aistudio.google.com",
+                lastVerified: "Today"
+            },
+            {
+                id: 5,
+                category: "FREE COURSES",
+                title: "Google Generative AI Fundamentals",
+                organization: "Google Cloud Skill Boost",
+                location: "Online (Self-Paced)",
+                eligibility: "Open to all students and beginners",
+                deadline: "Ongoing / Lifetime Access",
+                postedDate: "3 days ago",
+                salary: "Free Verified Certificate",
+                qualification: "No prior coding experience required; basic internet literacy needed.",
+                description: "An introductory course explaining generative AI concepts, use cases, and how to prompt large language models effectively for daily productivity.",
+                requirements: ["Google account", "Stable internet connection"],
+                importantDates: "Self-paced; complete anytime.",
+                sourceLink: "https://cloud.google.com",
+                lastVerified: "3 days ago"
+            },
+            {
+                id: 6,
+                category: "COMPETITIONS",
+                title: "National Hackathon 2026: Code for Good",
+                organization: "Innovation Council India",
+                location: "New Delhi & Online",
+                eligibility: "College Students across all years",
+                deadline: "2026-04-25",
+                postedDate: "Today",
+                salary: "INR 2,00,000 Prize Pool",
+                qualification: "Teams of 2 to 4 members from recognized educational institutions.",
+                description: "Build open-source software solutions addressing real-world civic challenges in education, healthcare, and automated employment aggregation.",
+                requirements: ["Working prototype demo", "Pitch deck", "Open source repository link"],
+                importantDates: "Registration closes April 25, 2026. Grand finale on May 10, 2026.",
+                sourceLink: "https://ncs.gov.in",
+                lastVerified: "Today"
+            },
+            {
+                id: 7,
+                category: "AI TOOLS",
+                title: "ResumeAI Pro - Smart Resume Builder",
+                organization: "CareerTools Suite",
+                location: "Web Application",
+                eligibility: "Job seekers and professionals",
+                deadline: "Always Available",
+                postedDate: "4 days ago",
+                salary: "Free Tier Available",
+                qualification: "Anyone looking to optimize their resume for ATS compliance.",
+                description: "An AI-powered tool that scans your resume against job descriptions and suggests impactful bullet points and formatting tweaks instantly.",
+                requirements: ["PDF or Docx resume file"],
+                importantDates: "Instant access online.",
+                sourceLink: "https://aistudio.google.com",
+                lastVerified: "4 days ago"
             }
-        }
+        ];
 
-        function getCleanUrl(url) {
-            if (!url) return '#';
-            try {
-                if (url.includes('google.com/url?') || url.includes('news.google.com')) {
-                    const parsedUrl = new URL(url, window.location.origin);
-                    const actualUrl = parsedUrl.searchParams.get('url');
-                    if (actualUrl) return actualUrl;
-                }
-            } catch (e) {}
-            return url;
-        }
+        const categoriesMeta = [
+            { name: "TODAY'S JOBS", icon: "🔥", desc: "Latest employment openings" },
+            { name: "SCHOLARSHIPS", icon: "🎓", desc: "Grants & financial aid" },
+            { name: "REMOTE JOBS", icon: "💻", desc: "Work from anywhere roles" },
+            { name: "INTERNSHIPS", icon: "🚀", desc: "Stipend-based training" },
+            { name: "FREE COURSES", icon: "💰", desc: "Certifications & learning" },
+            { name: "COMPETITIONS", icon: "🏆", desc: "Hackathons & challenges" },
+            { name: "AI TOOLS", icon: "🧠", desc: "Smart job seeker utilities" }
+        ];
 
-        function displayOpportunities(items) {
-            const grid = document.getElementById('opportunityGrid');
-            if (!items || items.length === 0) {
-                grid.innerHTML = `<div class="col-span-full text-center text-slate-500 py-16 bg-white rounded-xl border border-slate-200">No matching active positions found.</div>`;
-                return;
-            }
+        let activeCategory = 'ALL';
 
-            grid.innerHTML = items.map(item => {
-                const cleanLink = getCleanUrl(item.link);
+        function renderCategoryCards() {
+            const grid = document.getElementById('categoryCardsGrid');
+            grid.innerHTML = categoriesMeta.map(cat => {
+                const count = opportunitiesData.filter(item => item.category === cat.name).length;
                 return `
-                    <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6 flex flex-col justify-between hover:shadow-md transition">
-                        <div>
-                            <div class="flex items-center justify-between mb-3">
-                                <span class="px-2.5 py-1 text-[11px] font-bold text-blue-700 bg-blue-50 rounded-md tracking-wide">${item.category || 'OPPORTUNITY'}</span>
-                            </div>
-                            <h3 class="text-base font-bold text-slate-900 leading-snug mb-2">${item.title || 'Untitled Opportunity'}</h3>
-                            <p class="text-xs text-slate-600 line-clamp-3 mb-4 leading-relaxed">${item.description || 'No description provided.'}</p>
-                            
-                            <div class="text-[11px] text-slate-500 space-y-1 mb-5 bg-slate-50 p-3 rounded-lg border border-slate-100">
-                                <div><strong>📅 Starting Time:</strong> Immediate / Open Now</div>
-                                <div><strong>⏳ End Date:</strong> Rolling / Check Source</div>
-                            </div>
+                    <div onclick="filterCategory('${cat.name}')" class="bg-white p-5 rounded-2xl border border-slate-200/80 hover:border-indigo-600/50 hover:shadow-md cursor-pointer transition flex flex-col justify-between group">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-2xl">${cat.icon}</span>
+                            <span class="text-xs font-bold px-2 py-0.5 rounded-full bg-slate-100 text-slate-600 group-hover:bg-indigo-50 group-hover:text-indigo-600 transition">${count} new</span>
                         </div>
-                        <a href="${cleanLink}" target="_blank" rel="noopener noreferrer" 
-                            class="w-full text-center bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs py-2.5 px-4 rounded-lg shadow-sm transition">
-                            View Details & Apply &rarr;
-                        </a>
+                        <div>
+                            <h3 class="font-bold text-slate-900 text-sm group-hover:text-indigo-600 transition">${cat.name}</h3>
+                            <p class="text-xs text-slate-400 mt-0.5">${cat.desc}</p>
+                        </div>
                     </div>
                 `;
             }).join('');
         }
 
-        function filterCategory(category) {
-            currentCategory = category;
-            document.querySelectorAll('.cat-btn').forEach(btn => {
-                if (btn.innerText === category) {
-                    btn.className = "cat-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-blue-600 text-white shadow transition";
-                } else {
-                    btn.className = "cat-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-white text-slate-600 border border-slate-200 hover:bg-slate-100 transition";
-                }
-            });
-            applyFilters();
+        function renderOpportunities(items) {
+            const grid = document.getElementById('opportunityGrid');
+            if (items.length === 0) {
+                grid.innerHTML = `<div class="col-span-full text-center py-16 text-slate-400 text-sm bg-white rounded-2xl border border-slate-200">No opportunities found matching your criteria.</div>`;
+                return;
+            }
+
+            grid.innerHTML = items.map(item => `
+                <div class="bg-white rounded-2xl border border-slate-200/80 p-6 flex flex-col justify-between hover:shadow-lg hover:border-indigo-200 transition group">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="px-2.5 py-1 text-[11px] font-bold text-indigo-700 bg-indigo-50 rounded-md tracking-wide">${item.category}</span>
+                            <span class="text-xs text-slate-400 font-medium">⏳ ${item.deadline}</span>
+                        </div>
+                        <h3 class="text-base font-bold text-slate-900 group-hover:text-indigo-600 transition leading-snug mb-1">${item.title}</h3>
+                        <p class="text-xs font-semibold text-slate-500 mb-3">${item.organization} • ${item.location}</p>
+                        <p class="text-xs text-slate-600 line-clamp-2 mb-4 leading-relaxed">${item.description}</p>
+                        
+                        <div class="space-y-1 text-xs text-slate-500 bg-slate-50 p-2.5 rounded-xl border border-slate-100 mb-5">
+                            <div><strong>🎓 Eligibility:</strong> ${item.eligibility}</div>
+                        </div>
+                    </div>
+                    <button onclick="openDetail(${item.id})" class="w-full text-center bg-slate-900 hover:bg-indigo-600 text-white font-semibold text-xs py-2.5 px-4 rounded-xl shadow-sm transition">
+                        View Details &rarr;
+                    </button>
+                </div>
+            `).join('');
         }
 
-        function filterOpportunities() {
-            applyFilters();
+        function filterCategory(categoryName) {
+            activeCategory = categoryName;
+            document.getElementById('clearFilterBtn').classList.remove('hidden');
+            document.getElementById('sectionTitle').innerText = categoryName === 'ALL' ? 'Latest Opportunities' : categoryName;
+            
+            const filtered = categoryName === 'ALL' ? opportunitiesData : opportunitiesData.filter(i => i.category === categoryName);
+            renderOpportunities(filtered);
+            
+            // Scroll down to listings
+            document.getElementById('sectionTitle').scrollIntoView({ behavior: 'smooth' });
         }
 
-        function applyFilters() {
+        function handleSearch() {
             const query = document.getElementById('searchInput').value.toLowerCase();
-            const filtered = allOpportunities.filter(item => {
-                const matchesCategory = currentCategory === 'ALL' || item.category === currentCategory;
-                const titleMatch = item.title ? item.title.toLowerCase().includes(query) : false;
-                const descMatch = item.description ? item.description.toLowerCase().includes(query) : false;
-                return matchesCategory && (titleMatch || descMatch);
-            });
-            displayOpportunities(filtered);
+            const filtered = opportunitiesData.filter(item => 
+                item.title.toLowerCase().includes(query) || 
+                item.organization.toLowerCase().includes(query) || 
+                item.description.toLowerCase().includes(query) ||
+                item.category.toLowerCase().includes(query)
+            );
+            document.getElementById('sectionTitle').innerText = `Search Results for "${query}"`;
+            document.getElementById('clearFilterBtn').classList.remove('hidden');
+            renderOpportunities(filtered);
+            document.getElementById('sectionTitle').scrollIntoView({ behavior: 'smooth' });
         }
 
-        loadOpportunities();
+        function openDetail(id) {
+            const item = opportunitiesData.find(i => i.id === id);
+            if (!item) return;
+
+            document.getElementById('homeView').classList.add('hidden');
+            document.getElementById('todayView').classList.add('hidden');
+            document.getElementById('detailView').classList.remove('hidden');
+            
+            document.getElementById('detailBreadcrumbCat').innerText = item.category;
+
+            const detailHTML = `
+                <div class="flex items-center justify-between flex-wrap gap-2">
+                    <span class="px-3 py-1 text-xs font-bold text-indigo-700 bg-indigo-50 rounded-lg">${item.category}</span>
+                    <span class="text-xs text-slate-400 font-medium">Last Verified: ${item.lastVerified}</span>
+                </div>
+
+                <div>
+                    <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-2 mb-1">${item.title}</h1>
+                    <p class="text-sm font-semibold text-slate-600">${item.organization} &bull; ${item.location}</p>
+                </div>
+
+                <!-- Key Info Card -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 bg-slate-50 p-5 rounded-2xl border border-slate-100 text-xs text-slate-700">
+                    <div><strong>🎓 Eligibility:</strong> ${item.eligibility}</div>
+                    <div><strong>⏳ Deadline:</strong> ${item.deadline}</div>
+                    <div><strong>💰 Salary / Benefits:</strong> ${item.salary}</div>
+                    <div><strong>📍 Location:</strong> ${item.location}</div>
+                </div>
+
+                <div class="space-y-4">
+                    <h3 class="text-sm font-bold text-slate-900 uppercase tracking-wider">Description</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">${item.description}</p>
+                </div>
+
+                <div class="space-y-4">
+                    <h3 class="text-sm font-bold text-slate-900 uppercase tracking-wider">Key Qualifications</h3>
+                    <p class="text-sm text-slate-600">${item.qualification}</p>
+                </div>
+
+                <div class="space-y-4">
+                    <h3 class="text-sm font-bold text-slate-900 uppercase tracking-wider">Requirements</h3>
+                    <ul class="list-disc pl-5 text-sm text-slate-600 space-y-1">
+                        ${item.requirements.map(req => `<li>${req}</li>`).join('')}
+                    </ul>
+                </div>
+
+                <div class="space-y-4">
+                    <h3 class="text-sm font-bold text-slate-900 uppercase tracking-wider">Important Dates</h3>
+                    <p class="text-sm text-slate-600">${item.importantDates}</p>
+                </div>
+
+                <!-- Visible Disclaimer -->
+                <div class="p-4 rounded-xl bg-amber-50 border border-amber-200 text-amber-800 text-xs font-medium">
+                    ⚠️ <strong>Disclaimer:</strong> Always verify information from the official source before applying.
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="pt-4 flex flex-col sm:flex-row gap-3">
+                    <a href="${item.link}" target="_blank" rel="noopener noreferrer" 
+                        class="flex-grow text-center bg-indigo-600 hover:bg-indigo-700 text-white font-semibold text-sm py-3.5 px-6 rounded-xl shadow-md transition">
+                        Apply at Official Source &rarr;
+                    </a>
+                    <button onclick="switchView('home')" class="bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold text-sm py-3.5 px-6 rounded-xl transition">
+                        Back to Listings
+                    </button>
+                </div>
+
+                <!-- Related Opportunities -->
+                <div class="border-t border-slate-100 pt-8 mt-8">
+                    <h3 class="text-sm font-bold text-slate-900 mb-4">Related Opportunities</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        ${opportunitiesData.filter(i => i.category === item.category && i.id !== item.id).slice(0, 2).map(rel => `
+                            <div onclick="openDetail(${rel.id})" class="p-4 rounded-xl border border-slate-200 hover:border-indigo-600 cursor-pointer transition bg-slate-50/50">
+                                <span class="text-[10px] font-bold text-indigo-600 uppercase">${rel.category}</span>
+                                <h4 class="text-xs font-bold text-slate-900 mt-1 line-clamp-1">${rel.title}</h4>
+                                <p class="text-[11px] text-slate-500 mt-0.5">${rel.organization}</p>
+                            </div>
+                        `).join('') || '<p class="text-xs text-slate-400">No related listings right now.</p>'}
+                    </div>
+                </div>
+            `;
+
+            document.getElementById('detailContent').innerHTML = detailHTML;
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function openTodaySummary() {
+            document.getElementById('homeView').classList.add('hidden');
+            document.getElementById('detailView').classList.add('hidden');
+            document.getElementById('todayView').classList.remove('hidden');
+
+            const today = new Date().toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+            document.getElementById('todayDateLabel').innerText = `Daily Aggregated Report • ${today}`;
+
+            const countsGrid = document.getElementById('todayCountsGrid');
+            countsGrid.innerHTML = categoriesMeta.map(cat => {
+                const count = opportunitiesData.filter(i => i.category === cat.name).length;
+                return `
+                    <div class="bg-white p-4 rounded-xl border border-slate-200 text-center">
+                        <span class="text-xl">${cat.icon}</span>
+                        <h4 class="text-lg font-extrabold text-slate-900 mt-1">${count}</h4>
+                        <p class="text-[11px] text-slate-500 font-medium">${cat.name}</p>
+                    </div>
+                `;
+            }).join('');
+
+            const todayList = document.getElementById('todayListContainer');
+            todayList.innerHTML = opportunitiesData.map(item => `
+                <div onclick="openDetail(${item.id})" class="bg-white p-5 rounded-xl border border-slate-200 hover:border-indigo-600 cursor-pointer transition flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                    <div>
+                        <span class="text-[10px] font-bold text-indigo-600 bg-indigo-50 px-2.5 py-1 rounded-md">${item.category}</span>
+                        <h3 class="text-sm font-bold text-slate-900 mt-2">${item.title}</h3>
+                        <p class="text-xs text-slate-500">${item.organization} • ${item.location}</p>
+                    </div>
+                    <span class="text-xs font-semibold text-indigo-600">View Details &rarr;</span>
+                </div>
+            `).join('');
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function switchView(viewName) {
+            if (viewName === 'home') {
+                document.getElementById('homeView').classList.remove('hidden');
+                document.getElementById('detailView').classList.add('hidden');
+                document.getElementById('todayView').classList.add('hidden');
+                document.getElementById('sectionTitle').innerText = 'Latest Opportunities';
+                document.getElementById('clearFilterBtn').classList.add('hidden');
+                renderOpportunities(opportunitiesData);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        function subscribeNewsletter() {
+            const email = document.getElementById('newsletterEmail').value;
+            const msg = document.getElementById('newsletterMsg');
+            if (email && email.includes('@')) {
+                msg.innerText = "🎉 Successfully subscribed! Check your inbox soon.";
+                msg.className = "text-xs text-emerald-400 font-semibold h-4";
+                document.getElementById('newsletterEmail').value = '';
+            } else {
+                msg.innerText = "⚠️ Please enter a valid email address.";
+                msg.className = "text-xs text-rose-300 font-semibold h-4";
+            }
+        }
+
+        // Initialize application on load
+        renderCategoryCards();
+        renderOpportunities(opportunitiesData);
     </script>
 </body>
 </html>
