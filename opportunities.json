@@ -1,92 +1,74 @@
 [
     {
-        "category": "SCHOLARSHIPS",
-        "title": "Siemens Scholarship Program for Engineering Students",
-        "description": "Siemens India offers holistic financial support and mentorship to first-year students enrolled in government engineering colleges, covering full tuition fees and offering soft skills training.",
-        "link": "https://www.siemens.com"
-    },
-    {
-        "category": "INTERNSHIPS",
-        "title": "Vikram Sarabhai Space Centre (ISRO) Internship",
-        "description": "The Vikram Sarabhai Space Centre (VSSC/ISRO) provides practical internship training opportunities for undergraduate and postgraduate students pursuing degrees in engineering and science disciplines.",
-        "link": "https://www.vssc.gov.in"
-    },
-    {
-        "category": "INTERNSHIPS",
-        "title": "World Bank Paid Internship Program",
-        "description": "The World Bank offers paid internship positions for enrolled graduate and postgraduate students looking to gain practical experience in international development, economics, public policy, and technical fields.",
-        "link": "https://www.worldbank.org"
-    },
-    {
-        "category": "INTERNSHIPS",
-        "title": "Ministry of Women and Child Development Internship",
-        "description": "The Ministry of Women and Child Development, Government of India, provides a paid internship scheme offering a stipend of Rs 20,000 per month for female students, researchers, and scholars.",
-        "link": "https://wcd.nic.in"
-    },
-    {
-        "category": "SCHOLARSHIPS",
-        "title": "Siemens Scholarship Program",
-        "description": "Financial assistance, holistic development, and mentorship program designed for first-year engineering students from economically weaker backgrounds in India.",
-        "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQUXZubEhKY3lCSTVQaWlZcEFvcTZ5RC1BaHdVdnVQTlZiNEplbzNwbWVJNlMtS3NKS2txZ0Q5MXpMX3dJSmlBeTFHVXFVR3FuNnB2OURaN0YyckVmRTZxZjRFRUJkZTdpSDJUOGV4QmtUX0FMNm5ieHlrcWxiUXBTWHhLZ0hmT3NuMURlRXpaazJYNXYzc2FiYnZRZGdRRTk3dzYw?oc=5"
-    },
-    {
-        "category": "INTERNSHIPS",
-        "title": "ISRO Vikram Sarabhai Space Centre Internship",
-        "description": "Opportunities for eligible undergraduate and postgraduate engineering/science students to intern at Vikram Sarabhai Space Centre (ISRO). Apply by March 16.",
-        "link": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxQU0l3c1NEMENFR2VwS3prWk9WNk5ZUzg1NWRYZVBOZ1ctV3FaSHV4azB2TkdJTHk2WWFManFORVJlbkx0VkpyLU1Dc2djN215WTNBVUMzZnR2JnB1N4q4OXVJT0NOYUNRYzVxYTI1dElMMVVuVllCNnBqaGF3UXRuQ3UyN1BSRUE3ZENvU3Q4SVZjX01tbGFqMzFPaTJwZkNKX0F0djBwaThNMElJNkRUa2xpV2Fyd1RieTU1b1JWYUZaaXRRLW9xWDdxU0FOenJvTVVoZUNuTFlsMllvdXR5SDhmcDBLUGVlTlNsendZclBndlpJT2NnVNIB_gFBVV95cUxNUE9ocGM0UDhOMGY1cVVaem4tczd2Ym9xNzJVd2hPZkp5UThMQ2lLd1_EWURJQ0Nmc29oSURHRFlHUjMwU0lGcHNJLTI0YkR3dnNNRWRPVUJBcTVnaEpLQ21CaTZBbU1LQy01ZlFmNWtaYWxRRmlLVHZHS2QtTlBaTm5aeFp0MC1mbnhvc0JJM1doRFRFTkJlTXg2LWh5UkxQNmFkOTJEY2xPcE82V1F4MV9lWHpybEItR3hTMjA0U3kyYUxsQXZJYkFRdmJrSW04blNmQURVcUZJaEZsOUVpenlGS0ZMTnRNbFRpMUpBX21NUlRyVk5pblZpOEdhQQ?oc=5"
-    },
-    {
-        "category": "INTERNSHIPS",
-        "title": "World Bank Paid Internship Program",
-        "description": "Paid internship opportunity offered by the World Bank for qualified candidates pursuing higher education to gain hands-on experience in international development.",
-        "link": "https://news.google.com/rss/articles/CBMihAJBVV95cUxOV0ljZlVlUlM0MU9SbC03aXFTTXFIaFpPdFhNOVBMc0NGVmdqbVpiRFpjNDdUQ3A3TEtLWmRselVDbjQ0QlVBM01zOVZkZjdrd2tNcGdFWnBDUHpnQm1PMUxnS1gzU0hpNTVLNHlobDM4RFF2RTdWX0E4cUdVX1g1M3VwQndhVUQ5YjREMGZKZ0Q1SERBR1ZvaHNNV0ZpcXREN2xRUGEyS3c5dWZ3SjBqY2wxcF8zRjZwZFEtZkM2VF9xOHVKeXZGZFhhdWJTcTJtdDVnRVhpNFFaZkM1STMzQmNpYXV0WkdEb0d3YmhpdDNNc09GdUxNZXhCWUpNdXZIQUUyUNIBigJBVV95cUxNNUhqX0tVblBhVUNXR1ptUzFHa1dhS0V4Z21WY25fa1pDajBKcjlaVlVBRkJIeGtFcE5pQzY3Q1VucWIzdThfVFExaXRWaEJOVGF6REFweEw5bVhHWmVUVGJPREkxX1dwNFdEVnZOcWNhc3pnSWZRejFwRk5yV282dHZkU25NdDZoMmxxMVdOQ0M3UXphZFpteU1qa25GQmlZenZISzlNNWNxLUY2a216M2RFWjdTM3RFRVNn3TlFiNjhham1CaEtGd1BzbDFBeEM4V3h1RmNldDZVRVpuV2RkeHBrMEI0aXlkbGJfbjY2ekpxdGVrV0taZFpwYVR4TWhLcEJINlpoN0HMAA?oc=5"
-    },
-    {
-        "category": "INTERNSHIPS",
-        "title": "Ministry of Women and Child Development Internship",
-        "description": "Paid internship program hosted by the Ministry of Women and Child Development offering a monthly stipend of Rs 20,000 for selected candidates.",
-        "link": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxNU25MVUtfdUNOZVZHaFhKelF3V3dZQ3dBNnVYeFdqZ0lQa0pUMnVrVFJjVW5Oa2NOMm1ibFVmbEQ1ZFU2TkFPaUU0RXVBWndZU2YtOW5sbS1yM3AtN0VkWk8wMGtOX0RrNG43NTRXZzhocDFaWG45LThaeGxpcTNSb2w3TXhtLTZkNTFWeC1YY1pJbUgyWEc1Q284ME9taUFiTnZiS3o2Q2FiMk1hRFR1UFdNLVVkpFY2ODVzV2FVem82Y0l6cDFXY2s3eW1rcXVxTWxNSW9YLURHamoxTnZnc0s3OGVhRWtQanBRTk9n0gHzAUFVX3lxTE81LUIwUkdNa3loel9VV09Gb0hiRURpb0NGTW82Yzh4SUlIMWlJYTBZTXdHQ25PR1N2TWpSQVl0Tkw2WERjOElhaEJqN2VzNEZHRmVoYS1jaUZsRXc2WTRWQkM5UWVNZkN1MTlwcUZ5RF93M1NtWjViOE5FQ3UxRTAzcFRoRktVMkllMGI5XzAtcVR0QVV4Q29ndWNJTVBBV1VJZ2R5RURuTnprNC1wOEVnaVhDN0NvRWoycTNOajNrOTFVaURRZW1pVWF5dm82d1Z4c0ptaXY3a3ZsLUR6dGpvMTRSeW0yQzNDX28xZ3Z6OGdGSQ?oc=5"
-    },
-    {
-        "category": "INTERNSHIPS",
-        "title": "Student Internships in Legal, Billing, Data & Design",
-        "description": "Various internship roles for students across domains like legal research, billing, data analysis, and design, along with scholarship opportunities.",
-        "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5jYkZpRXhXNEJMZ21QRmdtaHhDRmhvREhJeU5Va2ZQUGgxcVhsU0p0UXk0UHF3X2RBdFdoV0tQQjJJX3h2ZmptQTEyNV9hMWNFS1lWUUlpczB3VFAybGwtczFuUDhnSndOcWE0YldIM3BYYms?oc=5"
-    },
-    {
-        "category": "INTERNSHIPS",
-        "title": "Delhi University Jobs and Paid Internships Application",
-        "description": "Delhi University has opened applications for various job positions and paid internship programs for students. Interested candidates must submit their applications by July 22.",
-        "link": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxNYjhCUVZYRTU5cVh1LURfQUNaQTY1REQxVk5GR21uZ21vamZoVmE3WU1NczYyQmhSYkRBUEUyOTBIY1ZyZGtrSE5QVXdIWWFYSURFcXJYTFE2Sjl4bGVLMFpWMURSN3BSeExhZGdxQlc0Zy00Vzl4NDJJd3oxRkNVRGN2Z0E2VHJyQ2NNSFBpVU1FdVN2STZNaU5GWVo5aHd2dGxLVEZidzdvR0hMV3g4YzM4blF4aWxjQXhCaTFfbFNWZTNuU2luZm1lTkd2c2pUeGFiODRFR2trdWxQZDdHaXJlQnUzd9IB6wFBVV95cUxOaDNITG5iaktFc1U0aG9sbl_uMTljMWdrUmlfRkVsbUxhQTJUUmYyT0dha21POFdqX0hVN25iS1lHV0loTGhSVi0tZ1ZUd2VZMWhRVzJWM3Y1ZUdTQUh0Y2hRaktHay0wUm5xVHZ4ZFc0SGFJU2x4c2xUQU5pNUtRNzJiWGRYeFJyOFR3TkN1SlpqemphX1FuRFBaaTdnSFRyVnlaQ0wyMTVCaE1LeFp1TFU4UWlNd2ZndmVHUjFRT2dPcDk4T1hjd3BqZjVvZ29EZmp3d0k5VFM5NVl6RE05VW9GV0cyb1_USkJv?oc=5"
-    },
-    {
-        "category": "INTERNSHIPS",
-        "title": "Tesla Internships in Delhi, Gurugram, and Bengaluru",
-        "description": "Elon Musk's Tesla is hiring interns across major Indian cities including Delhi, Gurugram, and Bengaluru. Check eligibility criteria and apply online.",
-        "link": "https://news.google.com/rss/articles/CBMioAJBVV95cUxPQ3RjcE5TbzV2alRJdWU1ZlA1RVdJUUZQNmhVMnpmcHVCTmZ0SmpzNFBmX0hncE95SFBCX2M3alNYbHBHcDVkWTF1T0RaS1YyTVBmZ3VSa25IV0dGakw5Sjh2dkZzdjRCS1lva1_faVZKQWJKYU5HdHk0VS1ENTdmTFVzaUlsalI4VWFFOG9RVXkwekZ4YWx3OV_IUTc2ajM3TV_lbUtCMzAxclQtWGY2aXU2QWs4XzF5NmVLZmxTcnlwSmxJMHEwMUctdmxUMFM3Wm9rUE9mei1jWG5ydEJLTFptam5HOUJXX014TjZUdmFiY3dNbU1kaHZ5ZWNTcmxqMHF1dEVLY2JENXRxaktDcWQ1bXVGdGZkQ0ctUUtBejXSAaYCQVVfeXFMT3pxeGhpZ3lWNWNHQXlqRGxyZzhXNFRnVVVXSFdwVWxab0VaYlNCa05SR2JTR0huR3pTTEJ1NFBtaDB5dUdySDZLQlRNei1VaWxaYlFBcENyOHJvM2lNMkdxRDFwYnZwdUZ1bnozMXROMDM0Uk1LTF_wTy1DOW9LMV_4YWhQZ05VcGdkSjdtVGJnN0ZiVU82cHZRSUJvT0xjeDNhYk5WQV_QUHR2MFhnRlhBRU5XVkt2SlNWYnpXVllfbjdzWmt2RnZZSjdpSWlHN2NiNkhabFlmd0wzczljSDFRUGowMHpUaEc3SGhScHB3UFI0N25iS1lIUkVGT2ZCRzVmM3Z5bllxUGRjNDhxUk9JM2o0ZWpwNHFQck9zNENQR2Zn?oc=5"
-    },
-    {
-        "category": "INTERNSHIPS",
-        "title": "Paid Internship Programme in Japan with Free Travel & Stay",
-        "description": "Opportunity for students to participate in a paid internship programme in Japan offering fully funded travel and accommodation benefits.",
-        "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxOWDFOMm15TmlOSVlSV0dMckcxOEgtd2ZuZHRwZlZXeG5TSU9fZFpZTzdZRVI4Yl_veTVScmQyRjQ1MmFkQmxCR2tNZEJwMjctbmVKdmxodnZ2amgwbXdpb0xwSDNpdVRaMzZmb0dQWnJUWmlIQmU2Szl5ZU1yNDBBTlg3NHBCTzVMM0NJR1RZV04tVHgxZ2dLci1mdGJKWTc1T1dUYnlnVFVIOFNaUTkzb0toeHJMQjFuMHlCR2R4QnBIRTdqcDRFYUJmZURhdll4aTdGWkMtWlM4RE5EcGfSAeMBQVVfeXFMT0daREcyNnZtVzRLbHM3dFVNMU1KWUlaY3VYLUFvVGU0RmRHa0pSUnRVQ2ZhdXV5a1ZFWnZrbzdNclVMNnhONDhVMy0wN1NXaXZvU3dvcnZwbUdWenE2ZFk1Vjl6S2VjaGhMM01USkdOaE13ZTJKdWxrOURvaXBuaVNoWWZwb0lWYloxcVpSQnlDTzVybXh0M2pSMD3OV0E2aWptdnZ0aVJvX055NE0yMTZ1dGtKNGJldmJmU3ZfTWhfOThwOXR0eU8?oc=5"
-    },
-    {
-        "category": "INTERNSHIPS",
-        "title": "Delhi University Paid Internship and Job Applications Drive",
-        "description": "Delhi University's Central Placement Cell (CPC) has opened applications for full-time jobs and paid internship opportunities across multiple disciplines.",
-        "link": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxNYjhCUVZYRTU5cVh1LURfQUNaQTY1REQxVk5GR21uZ21vamZoVmE3WU1NczYyQmhSYkRBUEUyOTBIY1ZyZGtrSE5QVXdIWWFYSURFcXJYTFE2Sjl4bGVLMFpWMURSN3BSeExhZGdxQlc0Zy00Vzl4NDJJd3oxRkNVRGN2Z0E2VHJyQ2NNSFBpVU1FdVN2STZNaU5GWVo5aHd2dGxLVEZidzdvR0HMV3g4YzM4blF4aWxjQXhCaTFfbFNWZTNuU2luZm1lTkd2c2pUeGFiODRFR2trdWxQZDdHaXJlQnUzd9IB6wFBVV95cUxOaDNITG5iaktFc1U0aG9sbl9uMTljMWdrUmlfRkVsbUxhQTJUUmYyT0dha21POFdqX0hVN25iS1lHV0loTGhSVi0tZ1ZUd2VZMWhRVzJWM3Y1ZUdTQUh0Y2hRaktHay0wUm5xVHZ4ZFc0SGFJU2x4c2xUQU5pNUtRNzJiWGRYeFJyOFR3TkN1SlpqemphX1FuRFBaaTdnSFRyVnlaQ0wyMTVCaE1LeFp1TFU4UWlNd2ZndmVHUjFRT2dPcDk4T1hjd3BqZjVvZ29EZmp3d0k5VFM5NVl6RE05VW9GV0cyb19USkJv?oc=5"
-    },
-    {
-        "category": "INTERNSHIPS",
-        "title": "Paid Internship Programme in Japan with Free Travel and Stay",
-        "description": "An international paid internship programme offering selected applicants fully covered travel expenses, free stay, and practical work experience in Japan.",
-        "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxOWDFOMm15TmlOSVlSV0dMckcxOEgtd2ZuZHRwZlZXeG5TSU9fZFpZTzdZRVI4Yl9veTVScmQyRjQ1MmFkQmxCR2tNZEJwMjctbmVKdmxodnZ2amgwbXdpb0xwSDNpdVRaMzZmb0dQWnJUWmlIQmU2Szl5ZU1yNDBBTlg3NHBCTzVMM0NJR1RZV04tVHgxZ2dLci1mdGJKWTc1T1dUYnlnVFVIOFNaUTkzb0toeHJMQjFuMHlCR2R4QnBIRTdqcDRFYUJmZURhdll4aTdGWkMtWlM4RE5EcGfSAeMBQVVfeXFMT0daREcyNnZtVzRLbHM3dFVNMU1KWUlaY3VYLUFvVGU0RmRHa0pSUnRVQ2ZhdXV5a1ZFWnZrbzdNclVMNnhONDhVMy0wN1NXaXZvU3dvcnZwbUdWenE2ZFk1Vjl6S2VjaGhMM01USkdOdE13ZTJKdWxrOURvaXBuaVNoWWZwb0lWYloxcVpSQnlDTzVybXh0MkhqWjA3OVkwRVZpWmR2Wl9qQjF3OEJ4UF9YTENEa0xRWEZja0tGaFZJeEpFTWFzcjhLLU1STDVfekJlOUxJMVY3STdUY185bkE5N2c?oc=5"
-    },
-    {
         "category": "TODAY'S JOBS",
-        "title": "University of Glasgow Paid Internships and Student Jobs Initiative",
-        "description": "The University of Glasgow is allocating 1.5 million pounds to fund paid internships and part-time student employment positions.",
-        "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxPUUtoeGxwTG5RSWp6RWh1bjZxS3RDcm5zeFNRSnpqWDFtVVlRc1AwSG5lUGYxMmVjUXJ3WkdWbEhfVTI2MS11a25hdi10eFpSckVVNTdXaHZPQWtrREVadWdlVG0wQ2FRUjRGRTQxN1hvWTJHd3ZRN250MTBrLVVjbmdoc2pYT2R4TDk5ZzU5ZGt5U0VkYnpnRktJTjFZQ2tDZk8wZ0cxdUNqUjE1RC1mUWxPS0JzajBGdnVzNnp3YzlueTd3SnFKeVZZZG1nZ2FhaFFUVUFINVR6SUtsUEHSAeMBQVVfeXFMUDZJQzRhRG15b3haWEVlcjFjMTBselJoTXJyeG0xM1dfMm00WjNCVGVLUW1tYTJtNEZlSDd4YUNZNDZ3Y0tuZnltMWpZWVJPUFFIVDhEQ3dZa2NKS21NNldvRzdzVVk2WDVORFU2Zm9vbkZfWE1BZmYySlVsVlRzVllEMERWVUdOZURJaWswRjVmRGRqc3NISVFtRThFaElpNFJMbmViYlNENlBhODJGODVHWGkwYm1lQzgwZ1VKdmlzQ0Q4NUhJVG5aZzJNRXVNQ1hfbkZXNVNCNllZNjE1d3ZpS28?oc=5"
+        "title": "Software Engineer - Early Career",
+        "organization": "Google",
+        "location": "Bengaluru, India / Global",
+        "eligibility": "Recent graduates or early career professionals with 0-2 years experience in software development",
+        "deadline": "Rolling Basis",
+        "salary": "\u20b915,000,000 - \u20b925,000,000 PA",
+        "qualification": "Bachelor's, Master's, or PhD degree in Computer Science or related technical field",
+        "description": "Develop scalable solutions for core search, cloud infrastructure, machine learning, and consumer applications across global markets.",
+        "source_url": "https://careers.google.com"
+    },
+    {
+        "category": "SCHOLARSHIPS",
+        "title": "Prime Minister's Research Fellowship (PMRF)",
+        "organization": "Ministry of Education, Government of India",
+        "location": "India",
+        "eligibility": "Indian students admitted or selected for PhD programs in premier technical institutes like IITs, IISc, IISERs",
+        "deadline": "April 30, 2025",
+        "salary": "\u20b970,000 - \u20b980,000 PM Stipend + Research Grant",
+        "qualification": "B.Tech/M.Tech/M.Sc with high CGPA or valid GATE score",
+        "description": "Designed to attract the best talent into research in science and technology domains with premier monthly fellowships and research grants.",
+        "source_url": "https://scholarships.gov.in"
+    },
+    {
+        "category": "INTERNSHIPS",
+        "title": "Software Engineering Summer Intern 2025",
+        "organization": "Microsoft",
+        "location": "Hyderabad / Bengaluru, India",
+        "eligibility": "Students currently pursuing a degree program in Computer Science, IT, or related fields graduating in 2026/2027",
+        "deadline": "Open until filled",
+        "salary": "\u20b980,000 - \u20b9120,000 per month",
+        "qualification": "Enrolled in B.Tech / M.Tech / Dual Degree",
+        "description": "Work alongside full-time engineers on enterprise cloud services, generative AI integrations, developer platforms, and core OS tech.",
+        "source_url": "https://careers.microsoft.com"
+    },
+    {
+        "category": "REMOTE JOBS",
+        "title": "Open Source Community & AI Developer Support",
+        "organization": "GitHub",
+        "location": "Remote (Global / India)",
+        "eligibility": "Global candidates skilled in Python, JavaScript, Git, and modern AI developer tools",
+        "deadline": "Ongoing",
+        "salary": "$60,000 - $110,000 USD / year",
+        "qualification": "Bachelor's degree or equivalent practical open-source project portfolio",
+        "description": "Contribute to distributed software projects, support developer ecosystems, and maintain open AI tools fully remotely.",
+        "source_url": "https://github.com"
+    },
+    {
+        "category": "COMPETITIONS",
+        "title": "Microsoft Imagine Cup 2025",
+        "organization": "Microsoft",
+        "location": "Global / Online",
+        "eligibility": "Students aged 16+ enrolled in high school, college, or university worldwide",
+        "deadline": "January 31, 2025",
+        "salary": "Up to $100,000 USD Grand Prize + Azure Credits",
+        "qualification": "Currently enrolled student team in any discipline",
+        "description": "Global technology competition urging students to build disruptive tech solutions incorporating Microsoft AI and cloud services.",
+        "source_url": "https://imaginecup.microsoft.com"
+    },
+    {
+        "category": "FREE COURSES",
+        "title": "CS50's Introduction to Artificial Intelligence with Python",
+        "organization": "Harvard University",
+        "location": "Online / Global",
+        "eligibility": "Open to all students and professionals globally",
+        "deadline": "Self-Paced / Year-Round",
+        "salary": "Free Learning Option",
+        "qualification": "Prior basic Python programming experience recommended",
+        "description": "Learn concepts and algorithms behind modern AI\u2014including graph search algorithms, neural networks, Markov models, and natural language processing.",
+        "source_url": "https://pll.harvard.edu"
     }
 ]
