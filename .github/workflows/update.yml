@@ -8,6 +8,8 @@ on:
 jobs:
   run-engine:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  # <-- Add this line to grant write access
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
