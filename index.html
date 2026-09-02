@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,208 +25,615 @@
 </head>
 <body class="bg-[#FAFAFC] text-[#0F172A] font-sans antialiased min-h-screen flex flex-col justify-between selection:bg-indigo-600 selection:text-white">
 
-    <!-- 1. NAVIGATION BAR -->
+    <!-- NAVIGATION BAR -->
     <nav class="bg-white/80 backdrop-blur-md border-b border-slate-100 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-            <a href="#" class="font-extrabold text-lg text-slate-900 tracking-tight flex items-center gap-2.5">
+            <a href="#home" onclick="switchPage('home')" class="font-extrabold text-lg text-slate-900 tracking-tight flex items-center gap-2.5">
                 <span class="w-8 h-8 rounded-xl bg-indigo-600 text-white flex items-center justify-center text-xs font-black shadow-sm shadow-indigo-200">OH</span>
                 OpportunityHub
             </a>
 
             <div class="hidden lg:flex items-center space-x-1 text-sm font-medium text-slate-600">
-                <a href="#opportunities" onclick="filterCategory('TODAY\'S JOBS')" class="px-3 py-2 rounded-lg hover:text-indigo-600 hover:bg-slate-50 transition">Jobs</a>
-                <a href="#opportunities" onclick="filterCategory('SCHOLARSHIPS')" class="px-3 py-2 rounded-lg hover:text-indigo-600 hover:bg-slate-50 transition">Scholarships</a>
-                <a href="#opportunities" onclick="filterCategory('REMOTE JOBS')" class="px-3 py-2 rounded-lg hover:text-indigo-600 hover:bg-slate-50 transition">Remote</a>
-                <a href="#opportunities" onclick="filterCategory('INTERNSHIPS')" class="px-3 py-2 rounded-lg hover:text-indigo-600 hover:bg-slate-50 transition">Internships</a>
-                <a href="#opportunities" onclick="filterCategory('FREE COURSES')" class="px-3 py-2 rounded-lg hover:text-indigo-600 hover:bg-slate-50 transition">Courses</a>
-                <a href="#opportunities" onclick="filterCategory('COMPETITIONS')" class="px-3 py-2 rounded-lg hover:text-indigo-600 hover:bg-slate-50 transition">Competitions</a>
-                <a href="#opportunities" onclick="filterCategory('AI TOOLS')" class="px-3 py-2 rounded-lg hover:text-indigo-600 hover:bg-slate-50 transition">AI Tools</a>
+                <button onclick="switchPage('home'); filterCategory('TODAY\'S JOBS')" class="px-3 py-2 rounded-lg hover:text-indigo-600 hover:bg-slate-50 transition cursor-pointer">Jobs</button>
+                <button onclick="switchPage('home'); filterCategory('SCHOLARSHIPS')" class="px-3 py-2 rounded-lg hover:text-indigo-600 hover:bg-slate-50 transition cursor-pointer">Scholarships</button>
+                <button onclick="switchPage('home'); filterCategory('REMOTE JOBS')" class="px-3 py-2 rounded-lg hover:text-indigo-600 hover:bg-slate-50 transition cursor-pointer">Remote</button>
+                <button onclick="switchPage('home'); filterCategory('INTERNSHIPS')" class="px-3 py-2 rounded-lg hover:text-indigo-600 hover:bg-slate-50 transition cursor-pointer">Internships</button>
+                <button onclick="switchPage('home'); filterCategory('FREE COURSES')" class="px-3 py-2 rounded-lg hover:text-indigo-600 hover:bg-slate-50 transition cursor-pointer">Courses</button>
+                <button onclick="switchPage('home'); filterCategory('COMPETITIONS')" class="px-3 py-2 rounded-lg hover:text-indigo-600 hover:bg-slate-50 transition cursor-pointer">Competitions</button>
             </div>
 
             <div>
-                <a href="#today-section" onclick="scrollToToday()" class="text-xs font-bold text-indigo-600 bg-indigo-50 border border-indigo-100 px-3.5 py-2 rounded-xl hover:bg-indigo-100 transition shadow-sm">🔥 Today's Feed</a>
+                <button onclick="switchPage('home'); scrollToToday()" class="text-xs font-bold text-indigo-600 bg-indigo-50 border border-indigo-100 px-3.5 py-2 rounded-xl hover:bg-indigo-100 transition shadow-sm cursor-pointer">🔥 Today's Feed</button>
             </div>
         </div>
     </nav>
 
-    <!-- Main Container -->
+    <!-- MAIN CONTAINER (DYNAMIC PAGE ROUTING CONTAINER) -->
     <main class="flex-grow">
-        <!-- 2. HERO SECTION -->
-        <header class="relative overflow-hidden pt-10 pb-12 px-4 sm:px-6 lg:px-8 text-center bg-gradient-to-b from-white via-[#FAFAFC] to-[#FAFAFC]">
-            <div class="max-w-3xl mx-auto space-y-5">
-                <span class="inline-flex items-center gap-1.5 py-1 px-3.5 rounded-full text-xs font-semibold bg-indigo-50 text-indigo-700 border border-indigo-100">
-                    ✨ Updated daily across India & Global
-                </span>
 
-                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.1]">
-                    Discover Your Next Big <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600">Opportunity</span>
-                </h1>
+        <!-- ================= PAGE 1: HOME ================= -->
+        <div id="page-home" class="page-view">
+            <!-- HERO SECTION -->
+            <header class="relative overflow-hidden pt-10 pb-12 px-4 sm:px-6 lg:px-8 text-center bg-gradient-to-b from-white via-[#FAFAFC] to-[#FAFAFC]">
+                <div class="max-w-3xl mx-auto space-y-5">
+                    <span class="inline-flex items-center gap-1.5 py-1 px-3.5 rounded-full text-xs font-semibold bg-indigo-50 text-indigo-700 border border-indigo-100">
+                        ✨ Updated daily across India & Global
+                    </span>
 
-                <p class="text-base sm:text-lg text-slate-500 max-w-2xl mx-auto font-normal">
-                    Jobs, internships, scholarships, free courses and career opportunities — verified and updated daily.
-                </p>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.1]">
+                        Discover Your Next Big <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600">Opportunity</span>
+                    </h1>
 
-                <div class="max-w-xl mx-auto pt-1">
-                    <div class="relative flex items-center shadow-lg shadow-slate-200/50 rounded-2xl border border-slate-200 bg-white overflow-hidden p-1.5">
-                        <span class="pl-3 text-slate-400 text-lg">🔍</span>
-                        <input type="text" id="searchInput" placeholder="Search jobs, organizations, or keywords..." 
-                            class="w-full px-3 py-3 text-sm text-slate-800 placeholder-slate-400 focus:outline-none"
-                            onkeyup="handleSearch()">
-                        <button onclick="handleSearch()" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold text-sm px-6 py-3 rounded-xl transition shadow-sm">Search</button>
+                    <p class="text-base sm:text-lg text-slate-500 max-w-2xl mx-auto font-normal">
+                        Jobs, internships, scholarships, free courses and career opportunities — verified and updated daily.
+                    </p>
+
+                    <div class="max-w-xl mx-auto pt-1">
+                        <div class="relative flex items-center shadow-lg shadow-slate-200/50 rounded-2xl border border-slate-200 bg-white overflow-hidden p-1.5">
+                            <span class="pl-3 text-slate-400 text-lg">🔍</span>
+                            <input type="text" id="searchInput" placeholder="Search jobs, organizations, or keywords..." 
+                                class="w-full px-3 py-3 text-sm text-slate-800 placeholder-slate-400 focus:outline-none"
+                                onkeyup="handleSearch()">
+                            <button onclick="handleSearch()" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold text-sm px-6 py-3 rounded-xl transition shadow-sm cursor-pointer">Search</button>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap items-center justify-center gap-4 pt-1 text-xs font-medium text-slate-500">
+                        <span class="flex items-center gap-1">✓ Verified sources</span>
+                        <span class="flex items-center gap-1">🔥 New opportunities added daily</span>
+                        <span class="flex items-center gap-1">🌍 India + Global opportunities</span>
                     </div>
                 </div>
+            </header>
 
-                <div class="flex flex-wrap items-center justify-center gap-4 pt-1 text-xs font-medium text-slate-500">
-                    <span class="flex items-center gap-1">✓ Verified sources</span>
-                    <span class="flex items-center gap-1">🔥 New opportunities added daily</span>
-                    <span class="flex items-center gap-1">🌍 India + Global opportunities</span>
-                </div>
-            </div>
-        </header>
+            <!-- QUICK CATEGORY GRID -->
+            <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10">
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4" id="categoryCardsGrid"></div>
+            </section>
 
-        <!-- 3. QUICK CATEGORY GRID -->
-        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10">
-            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4" id="categoryCardsGrid"></div>
-        </section>
-
-        <!-- 4. CLOSING SOON SECTION -->
-        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10">
-            <div class="mb-5 flex items-baseline justify-between">
-                <div>
-                    <h2 class="text-2xl font-bold text-slate-900">⏳ Closing Soon</h2>
-                    <p class="text-sm text-slate-500 mt-0.5">Don't miss these opportunities before the deadline.</p>
-                </div>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="closingSoonGrid"></div>
-        </section>
-
-        <!-- 5 & 6. LATEST OPPORTUNITIES SECTION & FILTERS -->
-        <section id="opportunities" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
-            <div class="flex flex-col md:flex-row md:items-center justify-between mb-6 gap-4">
-                <div>
-                    <div class="flex items-baseline gap-3">
-                        <h2 class="text-2xl font-bold text-slate-950" id="sectionHeading">Latest Opportunities</h2>
-                        <span class="text-xs text-slate-400 font-medium">Updated 5 minutes ago</span>
-                    </div>
-                    <p class="text-sm text-slate-500 mt-0.5">Fresh listings verified from trusted primary sources.</p>
-                </div>
-                
-                <div class="flex flex-wrap gap-1.5 bg-slate-200/60 p-1.5 rounded-xl border border-slate-200/80" id="filterTabsContainer">
-                    <button onclick="filterCategory('ALL')" class="filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-white text-indigo-600 shadow-sm transition">All</button>
-                    <button onclick="filterCategory('TODAY\'S JOBS')" class="filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition">🔥 Jobs</button>
-                    <button onclick="filterCategory('SCHOLARSHIPS')" class="filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition">🎓 Scholarships</button>
-                    <button onclick="filterCategory('REMOTE JOBS')" class="filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition">💻 Remote</button>
-                    <button onclick="filterCategory('INTERNSHIPS')" class="filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition">🚀 Internships</button>
-                    <button onclick="filterCategory('FREE COURSES')" class="filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition">💰 Courses</button>
-                    <button onclick="filterCategory('COMPETITIONS')" class="filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition">🏆 Competitions</button>
-                </div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5" id="opportunityGrid"></div>
-        </section>
-
-        <!-- 7. VIEW ALL BUTTON -->
-        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 text-center">
-            <a href="#today-section" onclick="scrollToToday()" class="inline-flex items-center gap-2 bg-slate-900 hover:bg-indigo-600 text-white font-semibold text-sm px-8 py-3.5 rounded-xl shadow-md transition">
-                Explore All Opportunities &rarr;
-            </a>
-        </section>
-
-        <!-- 8. HOW IT WORKS SECTION -->
-        <section class="border-y border-slate-200/85 bg-white py-12 px-4 sm:px-6 lg:px-8">
-            <div class="max-w-7xl mx-auto">
-                <div class="text-center max-w-xl mx-auto mb-10">
-                    <h2 class="text-2xl font-bold text-slate-900">Find Opportunities Without The Noise</h2>
-                    <p class="text-sm text-slate-500 mt-1">A streamlined discovery pipeline designed for maximum speed and zero clutter.</p>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100 flex flex-col items-start">
-                        <div class="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center font-bold text-lg mb-4">🔍</div>
-                        <h3 class="font-bold text-slate-900 text-base mb-1">Discover</h3>
-                        <p class="text-xs text-slate-500 leading-relaxed">Find jobs, internships, scholarships and opportunities in one place.</p>
-                    </div>
-                    <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100 flex flex-col items-start">
-                        <div class="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center font-bold text-lg mb-4">✓</div>
-                        <h3 class="font-bold text-slate-900 text-base mb-1">Verify</h3>
-                        <p class="text-xs text-slate-500 leading-relaxed">We organize information and link back directly to official primary sources.</p>
-                    </div>
-                    <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100 flex flex-col items-start">
-                        <div class="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center font-bold text-lg mb-4">🚀</div>
-                        <h3 class="font-bold text-slate-900 text-base mb-1">Apply</h3>
-                        <p class="text-xs text-slate-500 leading-relaxed">Find relevant opportunities and apply directly through official portals.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 9. DAILY OPPORTUNITY STATS -->
-        <section id="today-section" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-            <div class="bg-indigo-900 text-white rounded-3xl p-8 sm:p-10 shadow-lg relative overflow-hidden">
-                <div class="max-w-3xl mx-auto text-center space-y-6">
+            <!-- CLOSING SOON SECTION -->
+            <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10">
+                <div class="mb-5 flex items-baseline justify-between">
                     <div>
-                        <span class="text-xs font-bold tracking-widest uppercase text-indigo-300 bg-indigo-800/80 px-3 py-1 rounded-full">Daily Platform Summary</span>
-                        <h2 class="text-2xl sm:text-3xl font-extrabold mt-3">Today's Aggregated Metrics</h2>
-                    </div>
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 pt-1">
-                        <div class="bg-white/10 backdrop-blur-sm p-4 rounded-2xl border border-white/10">
-                            <h3 class="text-3xl font-extrabold text-white">24</h3>
-                            <p class="text-xs text-indigo-200 mt-1 font-medium">Jobs Added Today</p>
-                        </div>
-                        <div class="bg-white/10 backdrop-blur-sm p-4 rounded-2xl border border-white/10">
-                            <h3 class="text-3xl font-extrabold text-white">12</h3>
-                            <p class="text-xs text-indigo-200 mt-1 font-medium">New Internships</p>
-                        </div>
-                        <div class="bg-white/10 backdrop-blur-sm p-4 rounded-2xl border border-white/10">
-                            <h3 class="text-3xl font-extrabold text-white">8</h3>
-                            <p class="text-xs text-indigo-200 mt-1 font-medium">Scholarships Open</p>
-                        </div>
-                        <div class="bg-white/10 backdrop-blur-sm p-4 rounded-2xl border border-white/10">
-                            <h3 class="text-3xl font-extrabold text-white">30+</h3>
-                            <p class="text-xs text-indigo-200 mt-1 font-medium">Free Learning Resources</p>
-                        </div>
+                        <h2 class="text-2xl font-bold text-slate-900">⏳ Closing Soon</h2>
+                        <p class="text-sm text-slate-500 mt-0.5">Don't miss these opportunities before the deadline.</p>
                     </div>
                 </div>
-            </div>
-        </section>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="closingSoonGrid"></div>
+            </section>
 
-        <!-- 10. NEWSLETTER / DAILY DIGEST SECTION -->
-        <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pb-14">
-            <div class="bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 rounded-3xl p-8 sm:p-10 text-white shadow-xl border border-slate-800">
-                <div class="max-w-xl mx-auto text-center space-y-4">
-                    <h3 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Never Miss An Opportunity</h3>
-                    <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">Get a curated daily digest of the latest jobs, internships, scholarships and career opportunities directly in your inbox.</p>
+            <!-- LATEST OPPORTUNITIES SECTION & FILTERS -->
+            <section id="opportunities" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
+                <div class="flex flex-col md:flex-row md:items-center justify-between mb-6 gap-4">
+                    <div>
+                        <div class="flex items-baseline gap-3">
+                            <h2 class="text-2xl font-bold text-slate-950" id="sectionHeading">Latest Opportunities</h2>
+                            <span class="text-xs text-slate-400 font-medium">Updated 5 minutes ago</span>
+                        </div>
+                        <p class="text-sm text-slate-500 mt-0.5">Fresh listings verified from trusted primary sources.</p>
+                    </div>
                     
-                    <div class="flex flex-col sm:flex-row gap-3 pt-2">
-                        <input type="email" id="newsletterEmail" placeholder="Enter your email address" 
-                            class="flex-grow px-4 py-3.5 rounded-xl text-slate-900 text-sm focus:outline-none bg-white font-medium">
-                        <button onclick="subscribeNewsletter()" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold text-sm px-6 py-3.5 rounded-xl transition shadow-md whitespace-nowrap">
-                            Get Free Daily Alerts
-                        </button>
+                    <div class="flex flex-wrap gap-1.5 bg-slate-200/60 p-1.5 rounded-xl border border-slate-200/80" id="filterTabsContainer">
+                        <button onclick="filterCategory('ALL')" class="filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-white text-indigo-600 shadow-sm transition cursor-pointer">All</button>
+                        <button onclick="filterCategory('TODAY\'S JOBS')" class="filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition cursor-pointer">🔥 Jobs</button>
+                        <button onclick="filterCategory('SCHOLARSHIPS')" class="filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition cursor-pointer">🎓 Scholarships</button>
+                        <button onclick="filterCategory('REMOTE JOBS')" class="filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition cursor-pointer">💻 Remote</button>
+                        <button onclick="filterCategory('INTERNSHIPS')" class="filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition cursor-pointer">🚀 Internships</button>
+                        <button onclick="filterCategory('FREE COURSES')" class="filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition cursor-pointer">💰 Courses</button>
+                        <button onclick="filterCategory('COMPETITIONS')" class="filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition cursor-pointer">🏆 Competitions</button>
                     </div>
+                </div>
 
-                    <div class="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 pt-2 text-xs text-slate-300">
-                        <label class="flex items-center gap-1.5 cursor-pointer"><input type="checkbox" checked class="rounded accent-indigo-600"> Jobs</label>
-                        <label class="flex items-center gap-1.5 cursor-pointer"><input type="checkbox" checked class="rounded accent-indigo-600"> Internships</label>
-                        <label class="flex items-center gap-1.5 cursor-pointer"><input type="checkbox" checked class="rounded accent-indigo-600"> Scholarships</label>
-                        <label class="flex items-center gap-1.5 cursor-pointer"><input type="checkbox" checked class="rounded accent-indigo-600"> Remote Jobs</label>
-                        <label class="flex items-center gap-1.5 cursor-pointer"><input type="checkbox" checked class="rounded accent-indigo-600"> Free Courses</label>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5" id="opportunityGrid"></div>
+            </section>
+
+            <!-- VIEW ALL BUTTON -->
+            <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 text-center">
+                <button onclick="scrollToToday()" class="inline-flex items-center gap-2 bg-slate-900 hover:bg-indigo-600 text-white font-semibold text-sm px-8 py-3.5 rounded-xl shadow-md transition cursor-pointer">
+                    Explore All Opportunities &rarr;
+                </button>
+            </section>
+
+            <!-- HOW IT WORKS SECTION -->
+            <section class="border-y border-slate-200/85 bg-white py-12 px-4 sm:px-6 lg:px-8">
+                <div class="max-w-7xl mx-auto">
+                    <div class="text-center max-w-xl mx-auto mb-10">
+                        <h2 class="text-2xl font-bold text-slate-900">Find Opportunities Without The Noise</h2>
+                        <p class="text-sm text-slate-500 mt-1">A streamlined discovery pipeline designed for maximum speed and zero clutter.</p>
                     </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100 flex flex-col items-start">
+                            <div class="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center font-bold text-lg mb-4">🔍</div>
+                            <h3 class="font-bold text-slate-900 text-base mb-1">Discover</h3>
+                            <p class="text-xs text-slate-500 leading-relaxed">Find jobs, internships, scholarships and opportunities in one place.</p>
+                        </div>
+                        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100 flex flex-col items-start">
+                            <div class="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center font-bold text-lg mb-4">✓</div>
+                            <h3 class="font-bold text-slate-900 text-base mb-1">Verify</h3>
+                            <p class="text-xs text-slate-500 leading-relaxed">We organize information and link back directly to official primary sources.</p>
+                        </div>
+                        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100 flex flex-col items-start">
+                            <div class="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center font-bold text-lg mb-4">🚀</div>
+                            <h3 class="font-bold text-slate-900 text-base mb-1">Apply</h3>
+                            <p class="text-xs text-slate-500 leading-relaxed">Find relevant opportunities and apply directly through official portals.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-                    <p id="newsletterMsg" class="text-xs text-indigo-300 h-4 pt-1 font-medium"></p>
-                    <p class="text-[11px] text-slate-400">No spam. Unsubscribe anytime with 1-click.</p>
+            <!-- DAILY OPPORTUNITY STATS -->
+            <section id="today-section" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                <div class="bg-indigo-900 text-white rounded-3xl p-8 sm:p-10 shadow-lg relative overflow-hidden">
+                    <div class="max-w-3xl mx-auto text-center space-y-6">
+                        <div>
+                            <span class="text-xs font-bold tracking-widest uppercase text-indigo-300 bg-indigo-800/80 px-3 py-1 rounded-full">Daily Platform Summary</span>
+                            <h2 class="text-2xl sm:text-3xl font-extrabold mt-3">Today's Aggregated Metrics</h2>
+                        </div>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 pt-1">
+                            <div class="bg-white/10 backdrop-blur-sm p-4 rounded-2xl border border-white/10">
+                                <h3 class="text-3xl font-extrabold text-white">24</h3>
+                                <p class="text-xs text-indigo-200 mt-1 font-medium">Jobs Added Today</p>
+                            </div>
+                            <div class="bg-white/10 backdrop-blur-sm p-4 rounded-2xl border border-white/10">
+                                <h3 class="text-3xl font-extrabold text-white">12</h3>
+                                <p class="text-xs text-indigo-200 mt-1 font-medium">New Internships</p>
+                            </div>
+                            <div class="bg-white/10 backdrop-blur-sm p-4 rounded-2xl border border-white/10">
+                                <h3 class="text-3xl font-extrabold text-white">8</h3>
+                                <p class="text-xs text-indigo-200 mt-1 font-medium">Scholarships Open</p>
+                            </div>
+                            <div class="bg-white/10 backdrop-blur-sm p-4 rounded-2xl border border-white/10">
+                                <h3 class="text-3xl font-extrabold text-white">30+</h3>
+                                <p class="text-xs text-indigo-200 mt-1 font-medium">Free Learning Resources</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- NEWSLETTER / DAILY DIGEST SECTION -->
+            <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pb-14">
+                <div class="bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 rounded-3xl p-8 sm:p-10 text-white shadow-xl border border-slate-800">
+                    <div class="max-w-xl mx-auto text-center space-y-4">
+                        <h3 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Never Miss An Opportunity</h3>
+                        <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">Get a curated daily digest of the latest jobs, internships, scholarships and career opportunities directly in your inbox.</p>
+                        
+                        <div class="flex flex-col sm:flex-row gap-3 pt-2">
+                            <input type="email" id="newsletterEmail" placeholder="Enter your email address" 
+                                class="flex-grow px-4 py-3.5 rounded-xl text-slate-900 text-sm focus:outline-none bg-white font-medium">
+                            <button onclick="subscribeNewsletter()" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold text-sm px-6 py-3.5 rounded-xl transition shadow-md whitespace-nowrap cursor-pointer">
+                                Get Free Daily Alerts
+                            </button>
+                        </div>
+
+                        <div class="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 pt-2 text-xs text-slate-300">
+                            <label class="flex items-center gap-1.5 cursor-pointer"><input type="checkbox" checked class="rounded accent-indigo-600"> Jobs</label>
+                            <label class="flex items-center gap-1.5 cursor-pointer"><input type="checkbox" checked class="rounded accent-indigo-600"> Internships</label>
+                            <label class="flex items-center gap-1.5 cursor-pointer"><input type="checkbox" checked class="rounded accent-indigo-600"> Scholarships</label>
+                            <label class="flex items-center gap-1.5 cursor-pointer"><input type="checkbox" checked class="rounded accent-indigo-600"> Remote Jobs</label>
+                            <label class="flex items-center gap-1.5 cursor-pointer"><input type="checkbox" checked class="rounded accent-indigo-600"> Free Courses</label>
+                        </div>
+
+                        <p id="newsletterMsg" class="text-xs text-indigo-300 h-4 pt-1 font-medium"></p>
+                        <p class="text-[11px] text-slate-400">No spam. Unsubscribe anytime with 1-click.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TRUST / DISCLAIMER SECTION -->
+            <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10">
+                <div class="bg-white border border-slate-200/80 rounded-2xl p-6 text-center text-xs text-slate-500 max-w-4xl mx-auto leading-relaxed">
+                    OpportunityHub helps users discover opportunities from publicly available and official sources. Always verify eligibility, deadlines and application details from the official source before applying.
+                </div>
+            </section>
+        </div>
+
+
+        <!-- ================= PAGE 2: ABOUT US ROUTE (/about) ================= -->
+        <div id="page-about" class="page-view hidden py-12 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto space-y-10">
+                <!-- Header -->
+                <div class="text-center space-y-3">
+                    <span class="px-3.5 py-1 text-xs font-semibold bg-indigo-50 text-indigo-700 rounded-full border border-indigo-100">About Us</span>
+                    <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">About OpportunityHub</h1>
+                    <p class="text-base text-slate-500">Making valuable opportunities easier to discover.</p>
+                </div>
+
+                <hr class="border-slate-200">
+
+                <!-- SECTION 1 — WHO WE ARE -->
+                <div class="space-y-4">
+                    <h2 class="text-xl font-bold text-slate-900 flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-indigo-600"></span> WHO WE ARE
+                    </h2>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        OpportunityHub is a platform designed to help students, job seekers, and professionals discover valuable opportunities in one place.
+                    </p>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        We organize information about jobs, internships, scholarships, remote opportunities, free courses, competitions, and useful career tools.
+                    </p>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Our goal is simple: make opportunity discovery faster, easier, and less overwhelming.
+                    </p>
+                </div>
+
+                <hr class="border-slate-200">
+
+                <!-- SECTION 2 — OUR MISSION -->
+                <div class="space-y-4">
+                    <h2 class="text-xl font-bold text-slate-900 flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-indigo-600"></span> OUR MISSION
+                    </h2>
+                    <p class="text-slate-600 text-sm leading-relaxed bg-white p-5 rounded-2xl border border-slate-200/80 shadow-sm">
+                        Our mission is to make valuable opportunities easier to discover by organizing information from publicly available and official sources.
+                    </p>
+                </div>
+
+                <hr class="border-slate-200">
+
+                <!-- SECTION 3 — WHAT YOU CAN FIND -->
+                <div class="space-y-4">
+                    <h2 class="text-xl font-bold text-slate-900 flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-indigo-600"></span> WHAT YOU CAN FIND
+                    </h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+                        <div class="bg-white p-4 rounded-xl border border-slate-200/80 text-sm font-semibold text-slate-800 flex items-center gap-3">
+                            <span class="text-xl">🔥</span> Jobs and career opportunities
+                        </div>
+                        <div class="bg-white p-4 rounded-xl border border-slate-200/80 text-sm font-semibold text-slate-800 flex items-center gap-3">
+                            <span class="text-xl">🚀</span> Internships
+                        </div>
+                        <div class="bg-white p-4 rounded-xl border border-slate-200/80 text-sm font-semibold text-slate-800 flex items-center gap-3">
+                            <span class="text-xl">💻</span> Remote jobs
+                        </div>
+                        <div class="bg-white p-4 rounded-xl border border-slate-200/80 text-sm font-semibold text-slate-800 flex items-center gap-3">
+                            <span class="text-xl">🎓</span> Scholarships and fellowships
+                        </div>
+                        <div class="bg-white p-4 rounded-xl border border-slate-200/80 text-sm font-semibold text-slate-800 flex items-center gap-3">
+                            <span class="text-xl">💰</span> Free courses and learning resources
+                        </div>
+                        <div class="bg-white p-4 rounded-xl border border-slate-200/80 text-sm font-semibold text-slate-800 flex items-center gap-3">
+                            <span class="text-xl">🏆</span> Competitions and hackathons
+                        </div>
+                        <div class="bg-white p-4 rounded-xl border border-slate-200/80 text-sm font-semibold text-slate-800 flex items-center gap-3 sm:col-span-2">
+                            <span class="text-xl">🧠</span> AI tools for job seekers
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="border-slate-200">
+
+                <!-- SECTION 4 — IMPORTANT NOTE -->
+                <div class="space-y-4">
+                    <h2 class="text-xl font-bold text-slate-900 flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-indigo-600"></span> IMPORTANT NOTE
+                    </h2>
+                    <div class="bg-amber-50 border border-amber-200/60 p-5 rounded-2xl text-xs sm:text-sm text-amber-900 leading-relaxed">
+                        OpportunityHub is an information discovery platform. We encourage users to always verify eligibility, deadlines, and application requirements from the official source before applying.
+                    </div>
+                </div>
+
+                <div class="pt-6 text-center">
+                    <button onclick="switchPage('home')" class="bg-slate-900 hover:bg-indigo-600 text-white font-semibold text-sm px-6 py-3 rounded-xl transition cursor-pointer">
+                        &larr; Back to Opportunities
+                    </button>
                 </div>
             </div>
-        </section>
+        </div>
 
-        <!-- 11. TRUST / DISCLAIMER SECTION -->
-        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10">
-            <div class="bg-white border border-slate-200/80 rounded-2xl p-6 text-center text-xs text-slate-500 max-w-4xl mx-auto leading-relaxed">
-                OpportunityHub helps users discover opportunities from publicly available and official sources. Always verify eligibility, deadlines and application details from the official source before applying.
+
+        <!-- ================= PAGE 3: CONTACT ROUTE (/contact) ================= -->
+        <div id="page-contact" class="page-view hidden py-12 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto space-y-10">
+                <!-- Header -->
+                <div class="text-center space-y-3">
+                    <span class="px-3.5 py-1 text-xs font-semibold bg-indigo-50 text-indigo-700 rounded-full border border-indigo-100">Get in Touch</span>
+                    <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Contact Us</h1>
+                    <p class="text-base text-slate-500 max-w-lg mx-auto">Have a question, found incorrect information, or want to suggest an opportunity? We'd love to hear from you.</p>
+                </div>
+
+                <!-- Contact Form Box -->
+                <div class="bg-white p-8 rounded-3xl border border-slate-200/80 shadow-sm space-y-6">
+                    <form onsubmit="handleContactSubmit(event)" class="space-y-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Name</label>
+                                <input type="text" required placeholder="Your full name" class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-indigo-600">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Email Address</label>
+                                <input type="email" required placeholder="name@example.com" class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-indigo-600">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Subject / Topic</label>
+                            <select class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-indigo-600 bg-white text-slate-700">
+                                <option>General Question</option>
+                                <option>Report Incorrect Information</option>
+                                <option>Suggest an Opportunity</option>
+                                <option>Partnership</option>
+                                <option>Technical Issue</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Message</label>
+                            <textarea rows="5" required placeholder="Type your message or details here..." class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-indigo-600"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold text-sm py-3.5 rounded-xl transition shadow-sm cursor-pointer">
+                            Send Message
+                        </button>
+                        <p id="contactSuccessMsg" class="text-xs text-emerald-600 font-semibold text-center h-4"></p>
+                    </form>
+                </div>
+
+                <!-- Info Cards Below Form -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-2">
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200/80 space-y-2">
+                        <h3 class="font-bold text-slate-900 text-sm flex items-center gap-2">🚨 REPORT INCORRECT INFORMATION</h3>
+                        <p class="text-xs text-slate-500 leading-relaxed">Found an outdated deadline or incorrect detail? Let us know so we can review it.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200/80 space-y-2">
+                        <h3 class="font-bold text-slate-900 text-sm flex items-center gap-2">💡 SUGGEST AN OPPORTUNITY</h3>
+                        <p class="text-xs text-slate-500 leading-relaxed">Know about a job, scholarship, internship, course, or competition worth sharing? Send it to us.</p>
+                    </div>
+                </div>
+
+                <div class="pt-4 text-center">
+                    <button onclick="switchPage('home')" class="text-xs font-semibold text-slate-600 hover:text-indigo-600 transition cursor-pointer">
+                        &larr; Return to Home
+                    </button>
+                </div>
             </div>
-        </section>
+        </div>
+
+
+        <!-- ================= PAGE 4: PRIVACY POLICY ROUTE (/privacy-policy) ================= -->
+        <div id="page-privacy-policy" class="page-view hidden py-12 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto space-y-8">
+                <!-- Header -->
+                <div class="space-y-2">
+                    <span class="px-3.5 py-1 text-xs font-semibold bg-indigo-50 text-indigo-700 rounded-full border border-indigo-100">Legal</span>
+                    <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Privacy Policy</h1>
+                    <p class="text-xs font-medium text-slate-400">Last Updated: September 3, 2026</p>
+                </div>
+
+                <hr class="border-slate-200">
+
+                <!-- SECTION 1 -->
+                <div class="space-y-3">
+                    <h2 class="text-lg font-bold text-slate-900">INFORMATION WE MAY COLLECT</h2>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        We may collect information voluntarily provided by users, including:
+                    </p>
+                    <ul class="list-disc pl-5 text-slate-600 text-sm space-y-1.5">
+                        <li>Name</li>
+                        <li>Email address</li>
+                        <li>Information submitted through contact forms</li>
+                        <li>Newsletter preferences</li>
+                    </ul>
+                </div>
+
+                <hr class="border-slate-200">
+
+                <!-- SECTION 2 -->
+                <div class="space-y-3">
+                    <h2 class="text-lg font-bold text-slate-900">HOW WE USE INFORMATION</h2>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Information may be used to:
+                    </p>
+                    <ul class="list-disc pl-5 text-slate-600 text-sm space-y-1.5">
+                        <li>Send requested newsletters or updates</li>
+                        <li>Respond to user inquiries</li>
+                        <li>Improve our platform and user experience</li>
+                        <li>Monitor and improve website performance</li>
+                    </ul>
+                </div>
+
+                <hr class="border-slate-200">
+
+                <!-- SECTION 3 -->
+                <div class="space-y-3">
+                    <h2 class="text-lg font-bold text-slate-900">COOKIES</h2>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        OpportunityHub may use cookies and similar technologies to improve website functionality, understand usage patterns, and enhance user experience.
+                    </p>
+                </div>
+
+                <hr class="border-slate-200">
+
+                <!-- SECTION 4 -->
+                <div class="space-y-3">
+                    <h2 class="text-lg font-bold text-slate-900">THIRD-PARTY LINKS</h2>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Our platform may contain links to external websites and official sources. OpportunityHub is not responsible for the privacy practices or content of third-party websites.
+                    </p>
+                </div>
+
+                <hr class="border-slate-200">
+
+                <!-- SECTION 5 -->
+                <div class="space-y-3">
+                    <h2 class="text-lg font-bold text-slate-900">CONTACT</h2>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        If users have questions about this Privacy Policy, they can contact us through the <button onclick="switchPage('contact')" class="text-indigo-600 font-semibold hover:underline cursor-pointer">Contact page</button>.
+                    </p>
+                </div>
+
+                <div class="pt-6 text-center">
+                    <button onclick="switchPage('home')" class="bg-slate-900 hover:bg-indigo-600 text-white font-semibold text-sm px-6 py-3 rounded-xl transition cursor-pointer">
+                        &larr; Back to Home
+                    </button>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- ================= PAGE 5: TERMS ROUTE (/terms) ================= -->
+        <div id="page-terms" class="page-view hidden py-12 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto space-y-8">
+                <!-- Header -->
+                <div class="space-y-2">
+                    <span class="px-3.5 py-1 text-xs font-semibold bg-indigo-50 text-indigo-700 rounded-full border border-indigo-100">Legal</span>
+                    <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Terms of Use</h1>
+                    <p class="text-xs font-medium text-slate-400">Last Updated: September 3, 2026</p>
+                </div>
+
+                <hr class="border-slate-200">
+
+                <!-- SECTION 1 -->
+                <div class="space-y-3">
+                    <h2 class="text-lg font-bold text-slate-900">INFORMATIONAL PURPOSE</h2>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        OpportunityHub provides information about publicly available opportunities, including jobs, internships, scholarships, courses, competitions, and career resources.
+                    </p>
+                </div>
+
+                <hr class="border-slate-200">
+
+                <!-- SECTION 2 -->
+                <div class="space-y-3">
+                    <h2 class="text-lg font-bold text-slate-900">NO GUARANTEE</h2>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        While we aim to provide accurate and updated information, we do not guarantee the completeness, accuracy, availability, or reliability of every listing.
+                    </p>
+                </div>
+
+                <hr class="border-slate-200">
+
+                <!-- SECTION 3 -->
+                <div class="space-y-3">
+                    <h2 class="text-lg font-bold text-slate-900">USER RESPONSIBILITY</h2>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Users are responsible for:
+                    </p>
+                    <ul class="list-disc pl-5 text-slate-600 text-sm space-y-1.5">
+                        <li>Verifying information from official sources</li>
+                        <li>Checking eligibility requirements</li>
+                        <li>Confirming deadlines</li>
+                        <li>Reviewing application requirements before applying</li>
+                    </ul>
+                </div>
+
+                <hr class="border-slate-200">
+
+                <!-- SECTION 4 -->
+                <div class="space-y-3">
+                    <h2 class="text-lg font-bold text-slate-900">EXTERNAL WEBSITES</h2>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        OpportunityHub may link to third-party websites. We do not control or take responsibility for external websites or their content.
+                    </p>
+                </div>
+
+                <hr class="border-slate-200">
+
+                <!-- SECTION 5 -->
+                <div class="space-y-3">
+                    <h2 class="text-lg font-bold text-slate-900">CHANGES TO LISTINGS</h2>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Opportunities may expire, change, or become unavailable without notice. Users should always check the official source for the latest information.
+                    </p>
+                </div>
+
+                <div class="pt-6 text-center">
+                    <button onclick="switchPage('home')" class="bg-slate-900 hover:bg-indigo-600 text-white font-semibold text-sm px-6 py-3 rounded-xl transition cursor-pointer">
+                        &larr; Back to Home
+                    </button>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- ================= PAGE 6: DISCLAIMER ROUTE (/disclaimer) ================= -->
+        <div id="page-disclaimer" class="page-view hidden py-12 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto space-y-8">
+                <!-- Header -->
+                <div class="space-y-2">
+                    <span class="px-3.5 py-1 text-xs font-semibold bg-indigo-50 text-indigo-700 rounded-full border border-indigo-100">Legal</span>
+                    <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Disclaimer</h1>
+                </div>
+
+                <hr class="border-slate-200">
+
+                <!-- SECTION 1 -->
+                <div class="space-y-3">
+                    <h2 class="text-lg font-bold text-slate-900">GENERAL DISCLAIMER</h2>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        OpportunityHub is an independent opportunity discovery and information platform.
+                    </p>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        We collect and organize publicly available information related to:
+                    </p>
+                    <ul class="list-disc pl-5 text-slate-600 text-sm space-y-1.5">
+                        <li>Jobs</li>
+                        <li>Internships</li>
+                        <li>Scholarships</li>
+                        <li>Remote opportunities</li>
+                        <li>Free courses</li>
+                        <li>Competitions</li>
+                        <li>Career tools</li>
+                    </ul>
+                </div>
+
+                <hr class="border-slate-200">
+
+                <!-- SECTION 2 -->
+                <div class="space-y-3">
+                    <h2 class="text-lg font-bold text-slate-900">NO AFFILIATION</h2>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Unless explicitly stated, OpportunityHub is not affiliated with, endorsed by, or officially associated with the organizations, companies, universities, or institutions featured on this platform.
+                    </p>
+                </div>
+
+                <hr class="border-slate-200">
+
+                <!-- SECTION 3 -->
+                <div class="space-y-3">
+                    <h2 class="text-lg font-bold text-slate-900">VERIFY BEFORE APPLYING</h2>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Information such as eligibility criteria, deadlines, benefits, salaries, and application requirements may change.
+                    </p>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Users should always verify details directly from the official source before applying.
+                    </p>
+                </div>
+
+                <hr class="border-slate-200">
+
+                <!-- SECTION 4 -->
+                <div class="space-y-3">
+                    <h2 class="text-lg font-bold text-slate-900">EXTERNAL LINKS</h2>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        OpportunityHub may provide links to third-party websites for informational purposes.
+                    </p>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        We are not responsible for the content, availability, accuracy, or security of external websites.
+                    </p>
+                </div>
+
+                <hr class="border-slate-200">
+
+                <!-- SECTION 5 -->
+                <div class="space-y-3">
+                    <h2 class="text-lg font-bold text-slate-900">NO GUARANTEE OF SELECTION</h2>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Listing an opportunity on OpportunityHub does not guarantee eligibility, selection, acceptance, employment, funding, or any other outcome.
+                    </p>
+                </div>
+
+                <div class="pt-6 text-center">
+                    <button onclick="switchPage('home')" class="bg-slate-900 hover:bg-indigo-600 text-white font-semibold text-sm px-6 py-3 rounded-xl transition cursor-pointer">
+                        &larr; Back to Home
+                    </button>
+                </div>
+            </div>
+        </div>
+
     </main>
 
-    <!-- 12. FOOTER -->
+    <!-- FOOTER -->
     <footer class="bg-white border-t border-slate-200/80 py-10 text-sm text-slate-500">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
             <div class="space-y-2 text-center md:text-left">
@@ -237,34 +644,26 @@
                 <p class="text-xs text-slate-400 max-w-xs">Discover jobs, internships, scholarships and opportunities — all in one place.</p>
             </div>
             
-            <div class="flex flex-wrap justify-center gap-8 text-xs font-medium text-slate-600">
+            <div class="flex flex-wrap justify-center gap-12 text-xs font-medium text-slate-600">
                 <div class="space-y-2">
-                    <p class="font-bold text-slate-900">Categories</p>
+                    <p class="font-bold text-slate-900">ABOUT</p>
                     <div class="flex flex-col space-y-1.5 text-slate-500">
-                        <a href="#opportunities" onclick="filterCategory('TODAY\'S JOBS')" class="hover:text-indigo-600 transition">Jobs</a>
-                        <a href="#opportunities" onclick="filterCategory('SCHOLARSHIPS')" class="hover:text-indigo-600 transition">Scholarships</a>
-                        <a href="#opportunities" onclick="filterCategory('INTERNSHIPS')" class="hover:text-indigo-600 transition">Internships</a>
+                        <button onclick="switchPage('about')" class="hover:text-indigo-600 text-left transition cursor-pointer">About Us</button>
+                        <button onclick="switchPage('contact')" class="hover:text-indigo-600 text-left transition cursor-pointer">Contact</button>
                     </div>
                 </div>
                 <div class="space-y-2">
-                    <p class="font-bold text-slate-900">About</p>
+                    <p class="font-bold text-slate-900">LEGAL</p>
                     <div class="flex flex-col space-y-1.5 text-slate-500">
-                        <a href="#" onclick="alert('OpportunityHub is a modern daily opportunity discovery platform.')" class="hover:text-indigo-600 transition">About Us</a>
-                        <a href="#" onclick="alert('Contact support: support@opportunityhub.local')" class="hover:text-indigo-600 transition">Contact</a>
-                    </div>
-                </div>
-                <div class="space-y-2">
-                    <p class="font-bold text-slate-900">Legal</p>
-                    <div class="flex flex-col space-y-1.5 text-slate-500">
-                        <a href="#" onclick="alert('Privacy Policy: All data is secure and verified.')" class="hover:text-indigo-600 transition">Privacy Policy</a>
-                        <a href="#" onclick="alert('Terms: Free public career aggregation portal.')" class="hover:text-indigo-600 transition">Terms</a>
-                        <a href="#" onclick="alert('Disclaimer: Verify all details from official sources.')" class="hover:text-indigo-600 transition">Disclaimer</a>
+                        <button onclick="switchPage('privacy-policy')" class="hover:text-indigo-600 text-left transition cursor-pointer">Privacy Policy</button>
+                        <button onclick="switchPage('terms')" class="hover:text-indigo-600 text-left transition cursor-pointer">Terms</button>
+                        <button onclick="switchPage('disclaimer')" class="hover:text-indigo-600 text-left transition cursor-pointer">Disclaimer</button>
                     </div>
                 </div>
             </div>
 
             <div class="text-xs text-slate-400 text-center md:text-right">
-                © 2026 OpportunityHub<br>All rights reserved.
+                &copy; 2026 OpportunityHub. All rights reserved.
             </div>
         </div>
     </footer>
@@ -390,7 +789,7 @@
         function renderCategoryCards() {
             const grid = document.getElementById('categoryCardsGrid');
             grid.innerHTML = categoriesMeta.map(cat => `
-                <div onclick="filterCategory('${cat.name}')" class="bg-white p-4.5 rounded-2xl border border-slate-200/80 hover:border-indigo-600/50 hover:shadow-md cursor-pointer transition flex flex-col justify-between group">
+                <div onclick="switchPage('home'); filterCategory('${cat.name}')" class="bg-white p-4.5 rounded-2xl border border-slate-200/80 hover:border-indigo-600/50 hover:shadow-md cursor-pointer transition flex flex-col justify-between group">
                     <div class="flex items-center justify-between mb-2.5">
                         <span class="text-2xl">${cat.icon}</span>
                         <span class="text-[11px] font-bold px-2.5 py-1 rounded-full bg-slate-100 text-slate-600 group-hover:bg-indigo-50 group-hover:text-indigo-600 transition">${cat.count}</span>
@@ -442,7 +841,7 @@
                             <span class="px-2.5 py-1 text-[10px] font-bold text-indigo-700 bg-indigo-50 rounded-md tracking-wide">${item.category || 'OPPORTUNITY'}</span>
                             <div class="flex items-center gap-2">
                                 <span class="text-xs text-slate-400 font-medium">⏳ ${item.application_deadline || item.deadline || 'Open'}</span>
-                                <button onclick="toggleBookmark(event, ${index})" class="text-slate-300 hover:text-amber-500 transition-colors p-1" title="Save Opportunity">
+                                <button onclick="toggleBookmark(event, ${index})" class="text-slate-300 hover:text-amber-500 transition-colors p-1 cursor-pointer" title="Save Opportunity">
                                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"></path></svg>
                                 </button>
                             </div>
@@ -474,15 +873,18 @@
             const buttons = document.querySelectorAll('.filter-btn');
             buttons.forEach(btn => {
                 if (btn.innerText.toUpperCase().includes(categoryName.toUpperCase()) || (categoryName === 'ALL' && btn.innerText === 'All')) {
-                    btn.className = "filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-white text-indigo-600 shadow-sm transition";
+                    btn.className = "filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-white text-indigo-600 shadow-sm transition cursor-pointer";
                 } else {
-                    btn.className = "filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition";
+                    btn.className = "filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition cursor-pointer";
                 }
             });
 
             const filtered = categoryName === 'ALL' ? opportunitiesData : opportunitiesData.filter(i => (i.category || '').toUpperCase() === categoryName.toUpperCase());
             renderOpportunities(filtered);
-            document.getElementById('opportunities').scrollIntoView({ behavior: 'smooth' });
+            const oppSection = document.getElementById('opportunities');
+            if(oppSection) {
+                oppSection.scrollIntoView({ behavior: 'smooth' });
+            }
         }
 
         function handleSearch() {
@@ -515,6 +917,14 @@
             }
         }
 
+        function handleContactSubmit(event) {
+            event.preventDefault();
+            const msg = document.getElementById('contactSuccessMsg');
+            msg.innerText = "🎉 Thank you! Your message has been sent successfully.";
+            event.target.reset();
+            setTimeout(() => { msg.innerText = ""; }, 5000);
+        }
+
         function toggleBookmark(event, index) {
             event.stopPropagation();
             const btn = event.currentTarget;
@@ -527,7 +937,19 @@
             }
         }
 
-        // Initialize Page Components
+        // Single Page Router Controller
+        function switchPage(pageId) {
+            const pages = document.querySelectorAll('.page-view');
+            pages.forEach(p => p.classList.add('hidden'));
+            
+            const targetPage = document.getElementById(`page-${pageId}`);
+            if(targetPage) {
+                targetPage.classList.remove('hidden');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        // Initialize Page Components on Load
         renderCategoryCards();
         renderClosingSoonCards();
         fetchOpportunities();
