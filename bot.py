@@ -24,9 +24,11 @@ except Exception as e:
     raw_text_corpus = "Tech internships in India, National Scholarship Portal updates, government jobs."
 
 prompt = f"""
-Generate up to 6 real, highly valuable career opportunities, internships, jobs, or scholarships based on current market trends for students and young professionals in India and globally.
+Generate up to 6 real career opportunities, internships, jobs, or scholarships for students and young professionals.
 
-CRITICAL REQUIREMENT FOR LINKS: Do not use AI development platforms, Google Studio, or raw code repository links. For each item, provide a direct official career portal or application URL (e.g., https://www.ncs.gov.in, https://scholarships.gov.in, https://careers.google.com, or official organizational career pages).
+CRITICAL REQUIREMENT FOR LINKS ("source_url"): 
+- Do NOT use Google AI Studio, Gemini Studio, localhost, or GitHub repository links.
+- Provide real, functional external career site URLs (e.g., https://www.naukri.com, https://www.linkedin.com/jobs, https://www.ncs.gov.in, or specific company career pages like https://careers.google.com).
 
 Return ONLY a valid JSON array with objects containing these exact keys: 
 "category" (choose strictly from: TODAY'S JOBS, SCHOLARSHIPS, REMOTE JOBS, INTERNSHIPS, FREE COURSES, COMPETITIONS, AI TOOLS), 
@@ -39,11 +41,12 @@ clean_text = response.text.replace("```json", "").replace("```", "").strip()
 
 try:
     new_data = json.loads(clean_text)
-    # Ensure source_url field maps correctly for frontend consumption and filters out unwanted domains
+    
+    # Clean and sanitize URLs to completely block unwanted domains
     for item in new_data:
         url = item.get("source_url", "")
-        if not url.startswith("http") or "aistudio.google.com" in url or "github.com" in url:
-            item["source_url"] = "https://www.ncs.gov.in"
+        if not url.startswith("http") or any(bad in url for bad in ["aistudio.google.com", "github.com", "localhost", "127.0.0.1"]):
+            item["source_url"] = "https://www.naukri.com"
 
     with open("opportunities.json", "w") as f:
         json.dump(new_data, f, indent=4)
