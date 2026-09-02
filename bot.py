@@ -27,8 +27,8 @@ prompt = f"""
 Generate up to 6 real career opportunities, internships, jobs, or scholarships for students and young professionals.
 
 CRITICAL REQUIREMENT FOR LINKS ("source_url"): 
-- Do NOT use Google AI Studio, Gemini Studio, localhost, or GitHub repository links.
-- Provide real, functional external career site URLs (e.g., https://www.naukri.com, https://www.linkedin.com/jobs, https://www.ncs.gov.in, or specific company career pages like https://careers.google.com).
+- Every single item MUST contain a working external URL (e.g., https://www.linkedin.com/jobs, https://www.naukri.com, or specific company career sites).
+- Do NOT use placeholder text, relative paths, localhost, GitHub repo links, or AI studio links.
 
 Return ONLY a valid JSON array with objects containing these exact keys: 
 "category" (choose strictly from: TODAY'S JOBS, SCHOLARSHIPS, REMOTE JOBS, INTERNSHIPS, FREE COURSES, COMPETITIONS, AI TOOLS), 
@@ -42,11 +42,18 @@ clean_text = response.text.replace("```json", "").replace("```", "").strip()
 try:
     new_data = json.loads(clean_text)
     
-    # Clean and sanitize URLs to completely block unwanted domains
+    # Force clean valid links for every card type
     for item in new_data:
         url = item.get("source_url", "")
+        category = item.get("category", "")
+        
         if not url.startswith("http") or any(bad in url for bad in ["aistudio.google.com", "github.com", "localhost", "127.0.0.1"]):
-            item["source_url"] = "https://www.naukri.com"
+            if category == "INTERNSHIPS":
+                item["source_url"] = "https://www.naukri.com/internships"
+            elif category == "REMOTE JOBS":
+                item["source_url"] = "https://www.linkedin.com/jobs/search/?f_WT=2"
+            else:
+                item["source_url"] = "https://www.naukri.com"
 
     with open("opportunities.json", "w") as f:
         json.dump(new_data, f, indent=4)
