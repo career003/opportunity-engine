@@ -129,7 +129,7 @@
 
             <!-- VIEW ALL BUTTON -->
             <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 text-center">
-                <button onclick="scrollToToday()" class="inline-flex items-center gap-2 bg-slate-900 hover:bg-indigo-600 text-white font-semibold text-sm px-8 py-3.5 rounded-xl shadow-md transition cursor-pointer">
+                <button onclick="filterCategory('ALL')" class="inline-flex items-center gap-2 bg-slate-900 hover:bg-indigo-600 text-white font-semibold text-sm px-8 py-3.5 rounded-xl shadow-md transition cursor-pointer">
                     Explore All Opportunities &rarr;
                 </button>
             </section>
@@ -830,7 +830,6 @@
                 return;
             }
 
-            // Always display at least 6 cards by default
             const displayItems = items.slice(0, Math.max(6, items.length));
 
             grid.innerHTML = displayItems.map((item, index) => `
