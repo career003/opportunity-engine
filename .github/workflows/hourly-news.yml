@@ -1,0 +1,27 @@
+name: Hourly Niche News Automation
+
+on:
+  schedule:
+    - cron: '0 * * * *' # Runs every hour (Note: GitHub cron operates in UTC)
+  workflow_dispatch: # Allows you to trigger it manually anytime from GitHub
+
+jobs:
+  run-news-bot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install @google/genai
+
+      - name: Run News Script
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          PUBLISH_WEBHOOK_URL: ${{ secrets.PUBLISH_WEBHOOK_URL }}
+        run: node scripts/hourly-news-poster.js
