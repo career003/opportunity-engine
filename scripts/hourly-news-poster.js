@@ -5,14 +5,13 @@ const ai = new GoogleGenAI();
 async function runHourlyNewsPipeline() {
   try {
     const response = await ai.models.generateContent({
-      model: 'gemini-2.5-flash',
+      model: 'gemini-3.7-flash', // Updated to current active model
       contents: 'Write a short, punchy hourly news update covering remote careers, Facebook content distribution, and web dev AI tools.',
     });
 
     const newsPost = response.text;
     console.log("Generated Hourly Update:\n", newsPost);
-
-    // If you configure a webhook URL secret later, this will push it automatically
+    
     if (process.env.PUBLISH_WEBHOOK_URL) {
       await publishToWebhook(newsPost);
     }
