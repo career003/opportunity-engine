@@ -1,15 +1,15 @@
 [
     {
         "category": "INTERNSHIPS",
-        "title": "Software Engineering Intern (Summer 2025)",
+        "title": "Software Engineering Intern - Summer 2025",
         "organization": "Google",
         "location": "Mountain View, CA, USA",
-        "eligibility": "Currently enrolled in a Bachelor's, Master's, or PhD program in Computer Science or related technical field.",
-        "deadline": "Rolling Basis",
+        "eligibility": "Currently pursuing a Bachelor's, Master's, or PhD in Computer Science or related technical field.",
+        "deadline": "Open until filled",
         "salary": "$45 - $60 / hour",
-        "qualification": "Experience in C++, Java, Python, or Go. Knowledge of data structures and algorithms.",
-        "description": "Work on core software infrastructure and applications, collaborate with full-time engineers, and tackle real-world scalability and computer science challenges.",
-        "source_url": "https://www.google.com/about/careers/applications/jobs/results/"
+        "qualification": "Experience in C++, Java, Python, or Go.",
+        "description": "Work on core infrastructure, product development, and developer tools across Google's global platforms during a 12-week summer program.",
+        "source_url": "https://buildyourfuture.withgoogle.com/internships"
     },
     {
         "category": "SCHOLARSHIPS",
@@ -17,58 +17,58 @@
         "organization": "Gates Cambridge Trust",
         "location": "Cambridge, United Kingdom",
         "eligibility": "Citizens of any country outside the United Kingdom applying for a full-time postgraduate degree at Cambridge.",
-        "deadline": "January 2025",
-        "salary": "Fully Funded (Tuition + Stipend + Travel)",
-        "qualification": "Outstanding intellectual ability, leadership capacity, and commitment to improving the lives of others.",
-        "description": "Full-cost scholarship covering tuition, living allowance, and travel for outstanding applicants to pursue postgraduate study at the University of Cambridge.",
+        "deadline": "January 8, 2025",
+        "salary": "Fully Funded (Full tuition + \u00a320,000/yr stipend)",
+        "qualification": "Outstanding academic excellence, leadership capacity, and commitment to improving the lives of others.",
+        "description": "Provides full-cost awards for postgraduate study in any subject available at the University of Cambridge.",
         "source_url": "https://www.gatescambridge.org/apply/eligibility/"
     },
     {
         "category": "REMOTE JOBS",
-        "title": "Junior Frontend Developer (React)",
-        "organization": "Automattic",
-        "location": "Remote (Worldwide)",
-        "eligibility": "Open globally to candidates with hands-on experience in modern JavaScript frameworks.",
-        "deadline": "Open until filled",
-        "salary": "$65,000 - $85,000 / year",
-        "qualification": "Proficiency in JavaScript (ES6+), React, HTML5, CSS3, and modern web development tools.",
-        "description": "Build high-performance web applications and user interfaces for WordPress.com and related products within a fully distributed, remote company culture.",
-        "source_url": "https://automattic.com/work-with-us/"
+        "title": "Junior Frontend Engineer (React)",
+        "organization": "Canonical",
+        "location": "Remote (Global)",
+        "eligibility": "Open to candidates worldwide with legal eligibility to work remotely.",
+        "deadline": "Rolling basis",
+        "salary": "$50,000 - $75,000 / year",
+        "qualification": "Strong skills in JavaScript, TypeScript, React, and CSS/HTML.",
+        "description": "Design and implement modern, responsive user interfaces across Canonical's web ecosystem and Ubuntu product portals.",
+        "source_url": "https://canonical.com/careers/all"
     },
     {
         "category": "TODAY'S JOBS",
         "title": "Associate Data Analyst",
-        "organization": "Spotify",
+        "organization": "McKinsey & Company",
         "location": "New York, NY, USA",
-        "eligibility": "0-2 years of professional experience in data analytics or business intelligence.",
+        "eligibility": "Recent graduates or professionals with 0-2 years of experience.",
         "deadline": "Open until filled",
         "salary": "$85,000 - $105,000 / year",
-        "qualification": "Degree in Data Science, Computer Science, Statistics, or Quantitative field. Proficiency in SQL and Python/R.",
-        "description": "Analyze user metrics, build data dashboards, and collaborate with product managers to inform decision-making for core streaming features.",
-        "source_url": "https://lifeatspotify.com/jobs"
+        "qualification": "Bachelor's degree in STEM, Economics, or Business; proficiency in SQL and Python/R.",
+        "description": "Analyze complex corporate datasets, build executive dashboards, and deliver actionable insights for global strategic consulting clients.",
+        "source_url": "https://www.mckinsey.com/careers/search-jobs"
     },
     {
         "category": "COMPETITIONS",
         "title": "Microsoft Imagine Cup 2025",
         "organization": "Microsoft",
-        "location": "Global (Online / Finals in Redmond, WA)",
-        "eligibility": "Students aged 18+ actively enrolled in high school or higher education worldwide.",
-        "deadline": "January 2025",
-        "salary": "$100,000 Grand Prize + Azure Credits",
-        "qualification": "Must create an innovative tech solution using Microsoft Azure AI and Cloud technologies.",
-        "description": "Global student technology competition aimed at inspiring students to solve real-world problems using cloud computing, artificial intelligence, and software design.",
-        "source_url": "https://imaginecup.microsoft.com"
+        "location": "Global / Online",
+        "eligibility": "Enrolled students aged 18 or older worldwide.",
+        "deadline": "January 24, 2025",
+        "salary": "$100,000 USD Grand Prize + Mentorship",
+        "qualification": "Build an innovative solution using Microsoft Azure AI and Cloud tools.",
+        "description": "Global student technology competition encouraging young innovators to build software solutions that address critical global challenges.",
+        "source_url": "https://imaginecup.microsoft.com/"
     },
     {
         "category": "FREE COURSES",
-        "title": "CS50's Introduction to Computer Science",
-        "organization": "Harvard University (edX)",
-        "location": "Online / Self-paced",
-        "eligibility": "Open to anyone worldwide with no prior programming experience required.",
+        "title": "CS50: Introduction to Computer Science",
+        "organization": "Harvard University (via edX)",
+        "location": "Online",
+        "eligibility": "Open to anyone worldwide with an internet connection.",
         "deadline": "Self-paced",
         "salary": "Free Access (Optional Paid Certificate)",
-        "qualification": "Basic computer literacy and a passion for problem-solving.",
-        "description": "An entry-level computer science course teaching algorithmic thinking, software principles, and languages including C, Python, SQL, HTML, CSS, and JavaScript.",
-        "source_url": "https://www.edx.org/learn/computer-science/harvard-university-cs50s-introduction-to-computer-science"
+        "qualification": "No prior programming experience required.",
+        "description": "An entry-level computer science course teaching algorithmic thinking, data structures, software engineering fundamentals, and Web development.",
+        "source_url": "https://www.edx.org/learn/computer-science/harvard-university-cs50-s-introduction-to-computer-science"
     }
 ]
