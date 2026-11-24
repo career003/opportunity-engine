@@ -1,15 +1,27 @@
 [
     {
         "category": "INTERNSHIPS",
-        "title": "Software Engineering Intern, Summer 2025",
+        "title": "Software Engineering Intern - Summer 2025",
         "organization": "Google",
-        "location": "Mountain View, CA, USA / Remote options",
-        "eligibility": "Currently pursuing a Bachelor's, Master's, or PhD in Computer Science or related technical field.",
-        "deadline": "Rolling basis",
-        "salary": "$45 - $60 per hour",
-        "qualification": "Proficiency in C++, Java, Python, or Go.",
-        "description": "Join Google's engineering team for a 12-week summer internship working on real-world scalability, AI, and cloud products.",
-        "source_url": "https://buildyourfuture.withgoogle.com/internships"
+        "location": "Mountain View, CA, USA / Hybrid",
+        "eligibility": "Currently enrolled in a Bachelor's, Master's, or PhD degree program in Computer Science or related technical field.",
+        "deadline": "Rolling Basis",
+        "salary": "$45 - $60 / hour",
+        "qualification": "Pursuing BS/MS/PhD in CS, Software Engineering, or related discipline",
+        "description": "Work on real-world projects and build scalable systems alongside Google software engineers, gaining hands-on coding and systems design experience.",
+        "source_url": "https://www.google.com/about/careers/applications/jobs/results"
+    },
+    {
+        "category": "REMOTE JOBS",
+        "title": "Junior Frontend Developer",
+        "organization": "GitLab",
+        "location": "Remote (Worldwide)",
+        "eligibility": "1+ years of professional or strong project experience with JavaScript, Vue.js, or React.",
+        "deadline": "Open until filled",
+        "salary": "$70,000 - $95,000 / year",
+        "qualification": "Bachelor's degree in Computer Science or equivalent practical experience",
+        "description": "Join the core frontend team at GitLab to build and optimize open-source DevOps platform features using modern web technologies.",
+        "source_url": "https://about.gitlab.com/jobs/"
     },
     {
         "category": "SCHOLARSHIPS",
@@ -17,58 +29,46 @@
         "organization": "U.S. Department of State",
         "location": "USA",
         "eligibility": "Graduate students, young professionals, and artists from eligible participating countries worldwide.",
-        "deadline": "Varies by country (October 2025)",
-        "salary": "Full tuition, living stipend, airfare, and health insurance",
-        "qualification": "Completed undergraduate degree with strong academic standing.",
-        "description": "Enables graduate students, young professionals, and artists from abroad to study and conduct research in the United States.",
-        "source_url": "https://fulbrightonline.org"
-    },
-    {
-        "category": "TODAY'S JOBS",
-        "title": "Associate Product Manager (APM) Program",
-        "organization": "Meta",
-        "location": "Menlo Park, CA, USA",
-        "eligibility": "Recent graduates or early-career professionals with less than 2 years of PM experience.",
-        "deadline": "Open until filled",
-        "salary": "$120,000 - $150,000 / year + equity",
-        "qualification": "Bachelor's degree in any field with demonstrated product leadership.",
-        "description": "Rotational product management opportunity to build impactful products across Instagram, WhatsApp, and Facebook.",
-        "source_url": "https://www.metacareers.com"
-    },
-    {
-        "category": "REMOTE JOBS",
-        "title": "Junior Full Stack Developer",
-        "organization": "Canonical",
-        "location": "Remote (Global)",
-        "eligibility": "Open globally to self-motivated developers with strong web fundamentals.",
-        "deadline": "Applications open year-round",
-        "salary": "$60,000 - $80,000 / year",
-        "qualification": "BSc in Computer Science or equivalent experience in Python, JavaScript, and React.",
-        "description": "Work remotely on web applications and infrastructure powering Ubuntu and Canonical open-source projects.",
-        "source_url": "https://canonical.com/careers"
+        "deadline": "Varies by country",
+        "salary": "Fully Funded (Tuition, Living Stipend, Airfare, Health Insurance)",
+        "qualification": "Completed undergraduate degree (Bachelor's or equivalent)",
+        "description": "Enables graduate students and young professionals to study and conduct research in the United States at top universities.",
+        "source_url": "https://foreign.fulbrightonline.org/"
     },
     {
         "category": "COMPETITIONS",
         "title": "Microsoft Imagine Cup 2025",
         "organization": "Microsoft",
-        "location": "Global / Virtual",
-        "eligibility": "Students aged 16+ enrolled in high school, college, or university.",
+        "location": "Global (Online)",
+        "eligibility": "Students aged 18+ worldwide enrolled in an accredited educational institution.",
         "deadline": "January 2025",
-        "salary": "Up to $100,000 USD prize + Azure credits & mentorship",
-        "qualification": "Team of up to 4 students submitting a working tech solution using AI/Cloud.",
-        "description": "Global student tech competition empowering the next generation of founders to solve critical global issues with AI.",
-        "source_url": "https://imaginecup.microsoft.com"
+        "salary": "$100,000 USD + Global Mentorship",
+        "qualification": "Currently enrolled student in higher education",
+        "description": "Global technology competition encouraging student innovators to harness AI and Azure cloud tech to build solutions addressing social issues.",
+        "source_url": "https://imaginecup.microsoft.com/"
+    },
+    {
+        "category": "TODAY'S JOBS",
+        "title": "Associate Data Analyst",
+        "organization": "Spotify",
+        "location": "New York, NY, USA",
+        "eligibility": "0-2 years of experience in data analytics, proficiency in SQL, R, or Python.",
+        "deadline": "Open until filled",
+        "salary": "$85,000 - $110,000 / year",
+        "qualification": "Bachelor's degree in Statistics, Computer Science, Economics, Math, or related field",
+        "description": "Analyze listener trends, conduct A/B testing, and partner with cross-functional teams to build insights driving product innovation.",
+        "source_url": "https://lifeatspotify.com/jobs"
     },
     {
         "category": "FREE COURSES",
-        "title": "CS50: Introduction to Computer Science",
-        "organization": "Harvard University (via edX)",
-        "location": "Online / Self-paced",
-        "eligibility": "Open to anyone worldwide, beginner-friendly.",
-        "deadline": "Self-paced / Always open",
-        "salary": "Free learning (Optional paid certificate)",
-        "qualification": "No prior programming experience required.",
-        "description": "Harvard University's entry-level course on computer science and the art of programming using C, Python, SQL, HTML/CSS, and JavaScript.",
-        "source_url": "https://www.edx.org/course/introduction-computer-science-harvardx-cs50x"
+        "title": "CS50's Introduction to Computer Science",
+        "organization": "Harvard University",
+        "location": "Online (Self-Paced)",
+        "eligibility": "Open to all students and self-learners globally.",
+        "deadline": "Self-Paced",
+        "salary": "Free Access (Optional Certificate available)",
+        "qualification": "No prerequisites required",
+        "description": "An entry-level course teaching students how to think algorithmically and solve problems efficiently using C, Python, SQL, and JavaScript.",
+        "source_url": "https://pll.harvard.edu/course/cs50-introduction-computer-science"
     }
 ]
